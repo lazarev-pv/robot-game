@@ -1,0 +1,321 @@
+<character ai="ai.lua">
+	<resources>
+		<sprite name="char.sword" file="sword.png" w="-1" h="-1" top="-1" left="-1" right="-1" bottom="-1"/>
+		<sprite name="" file="char.atlas" w="-1" h="-1" top="-1" left="-1" right="-1" bottom="-1"/>
+		<sprite name="" file="slot_no.png" w="-1" h="-1" top="-1" left="-1" right="-1" bottom="-1"/>
+	</resources>
+	<skeleton>
+		<bones name="torso" parent="" id="0">
+			<begin x="-0.00279018" y="0.0648628"/>
+			<end x="-0.00798819" y="0.333284"/>
+			<slot id="0" name="torso" defaultPres="default" zOrder="0">
+				<pres rotation="-0.00503585" pres="char.torso" name="default">
+					<pos x="0.00339719" y="-0.00627061"/>
+					<scale x="0.00428818" y="0.00428818"/>
+				</pres>
+			</slot>
+			<color r="0" g="0" b="1" a="1" hex=""/>
+		</bones>
+		<bones name="uf_arm" parent="torso" id="1">
+			<begin x="-0.0241681" y="0.280078"/>
+			<end x="-0.129417" y="0.206071"/>
+			<slot id="1" name="uf_arm" defaultPres="default" zOrder="5">
+				<pres rotation="-3.07126" pres="char.front_upper_arm" name="default">
+					<pos x="0.00204966" y="0.00507232"/>
+					<scale x="0.00428818" y="0.00428818"/>
+				</pres>
+			</slot>
+			<color r="1" g="0" b="0.48" a="1" hex=""/>
+		</bones>
+		<bones name="cf_arm" parent="uf_arm" id="2">
+			<begin x="-0.125777" y="0.211065"/>
+			<end x="-0.171858" y="0.160711"/>
+			<slot id="2" name="cf_arm" defaultPres="default" zOrder="6">
+				<pres rotation="-3.24498" pres="char.front_bracer" name="default">
+					<pos x="-0.0100079" y="0.0132611"/>
+					<scale x="0.00428818" y="0.00428818"/>
+				</pres>
+			</slot>
+			<color r="1" g="0" b="0.48" a="1" hex=""/>
+		</bones>
+		<bones name="fd_arm" parent="cf_arm" id="3">
+			<begin x="-0.167915" y="0.16209"/>
+			<end x="-0.21213" y="0.0446888"/>
+			<slot id="3" name="slot2" defaultPres="default" zOrder="7">
+				<pres rotation="-3.4303" pres="char.front_fist_closed" name="default">
+					<pos x="0.0131063" y="-0.0254093"/>
+					<scale x="0.00384236" y="0.00384236"/>
+				</pres>
+			</slot>
+			<color r="1" g="0" b="0.48" a="1" hex=""/>
+		</bones>
+		<bones name="ur_arm" parent="torso" id="4">
+			<begin x="0.0170748" y="0.274068"/>
+			<end x="0.147742" y="0.254479"/>
+			<slot id="4" name="ur_arm" defaultPres="default" zOrder="-5">
+				<pres rotation="3.06527" pres="char.rear_upper_arm" name="default">
+					<pos x="0.0173257" y="0.0131884"/>
+					<scale x="0.00384236" y="0.00384236"/>
+				</pres>
+			</slot>
+			<color r="1" g="0.48" b="0" a="1" hex=""/>
+		</bones>
+		<bones name="cr_arm" parent="ur_arm" id="5">
+			<begin x="0.143501" y="0.253816"/>
+			<end x="0.209794" y="0.254804"/>
+			<slot id="5" name="cr_arm" defaultPres="default" zOrder="-7">
+				<pres rotation="2.74159" pres="char.rear_bracer" name="default">
+					<pos x="-0.00643855" y="0.0214777"/>
+					<scale x="0.00428818" y="0.00428818"/>
+				</pres>
+			</slot>
+			<color r="1" g="0.47" b="0" a="1" hex=""/>
+		</bones>
+		<bones name="r_arm" parent="cr_arm" id="6">
+			<begin x="0.193239" y="0.253475"/>
+			<end x="0.306938" y="0.25015"/>
+			<slot id="6" name="slot1" defaultPres="default" zOrder="-6">
+				<pres rotation="1.37642" pres="char.sword" name="sword">
+					<pos x="0.00343704" y="0.326463"/>
+					<scale x="0.00344413" y="0.00343052"/>
+				</pres>
+				<pres rotation="1.56457" pres="slot_no" name="default">
+					<pos x="-0.00192466" y="-0.0219897"/>
+					<scale x="0.00343323" y="0.00343059"/>
+				</pres>
+			</slot>
+			<color r="1" g="0.48" b="0" a="1" hex=""/>
+		</bones>
+		<bones name="neck" parent="torso" id="7">
+			<begin x="-0.000645178" y="0.323024"/>
+			<end x="0.0288148" y="0.405574"/>
+			<slot id="7" name="" defaultPres="default" zOrder="-1">
+				<pres rotation="3.45466" pres="char.neck" name="default">
+					<pos x="-0.00427054" y="0.00505378"/>
+					<scale x="0.00428818" y="0.00428818"/>
+				</pres>
+			</slot>
+			<color r="0" g="0" b="1" a="1" hex=""/>
+		</bones>
+		<bones name="head" parent="neck" id="8">
+			<begin x="0.0294028" y="0.393901"/>
+			<end x="0.0429828" y="0.672781"/>
+			<slot id="8" name="head" defaultPres="default" zOrder="1">
+				<pres rotation="0.000723149" pres="char.head" name="default">
+					<pos x="0.0102486" y="0.142214"/>
+					<scale x="0.00428818" y="0.00428818"/>
+				</pres>
+			</slot>
+			<slot id="9" name="smile" defaultPres="default" zOrder="2">
+				<pres rotation="0" pres="char.mouth_smile" name="default">
+					<pos x="0.0107308" y="-0.07732"/>
+					<scale x="0.00428818" y="0.0042882"/>
+				</pres>
+			</slot>
+			<slot id="10" name="eye" defaultPres="default" zOrder="2">
+				<pres rotation="-0.00592567" pres="char.eye_indifferent" name="default">
+					<pos x="0.0334342" y="0.064541"/>
+					<scale x="0.00407632" y="0.00407632"/>
+				</pres>
+			</slot>
+			<slot id="11" name="glass" defaultPres="default" zOrder="3">
+				<pres rotation="0.0019892" pres="char.goggles" name="default">
+					<pos x="-0.00383498" y="0.081664"/>
+					<scale x="0.00346908" y="0.00346908"/>
+				</pres>
+			</slot>
+			<color r="0" g="0" b="1" a="1" hex=""/>
+		</bones>
+		<bones name="uf_leg" parent="" id="9">
+			<begin x="-0.00965794" y="0.0476801"/>
+			<end x="-0.111838" y="-0.105472"/>
+			<slot id="12" name="" defaultPres="default" zOrder="1">
+				<pres rotation="-3.14006" pres="char.front_thigh" name="default">
+					<pos x="0.012018" y="-0.00644861"/>
+					<scale x="0.00428818" y="0.00428818"/>
+				</pres>
+			</slot>
+			<color r="1" g="0" b="0" a="1" hex=""/>
+		</bones>
+		<bones name="df_leg" parent="uf_leg" id="10">
+			<begin x="-0.0986929" y="-0.113917"/>
+			<end x="-0.135098" y="-0.330111"/>
+			<slot id="13" name="" defaultPres="default" zOrder="3">
+				<pres rotation="-3.15175" pres="char.front_shin" name="default">
+					<pos x="0.0200739" y="-0.0128435"/>
+					<scale x="0.00428818" y="0.00428818"/>
+				</pres>
+			</slot>
+			<color r="1" g="0" b="0" a="1" hex=""/>
+		</bones>
+		<bones name="f_foot" parent="df_leg" id="11">
+			<begin x="-0.156686" y="-0.354629"/>
+			<end x="-0.00982293" y="-0.370169"/>
+			<slot id="14" name="" defaultPres="default" zOrder="2">
+				<pres rotation="1.64493" pres="char.front_foot" name="default">
+					<pos x="-0.0128772" y="0.0279213"/>
+					<scale x="0.00428818" y="0.00428818"/>
+				</pres>
+			</slot>
+			<color r="1" g="0" b="0" a="1" hex=""/>
+		</bones>
+		<bones name="ur_leg" parent="" id="12">
+			<begin x="0.0504346" y="0.0362976"/>
+			<end x="0.128488" y="-0.119271"/>
+			<slot id="15" name="" defaultPres="default" zOrder="-3">
+				<pres rotation="2.90638" pres="char.rear_thigh" name="default">
+					<pos x="-0.0150233" y="0.0128865"/>
+					<scale x="0.00428818" y="0.00428818"/>
+				</pres>
+			</slot>
+			<color r="1" g="1" b="0" a="1" hex=""/>
+		</bones>
+		<bones name="dr_leg" parent="ur_leg" id="13">
+			<begin x="0.124681" y="-0.122194"/>
+			<end x="0.141878" y="-0.333546"/>
+			<slot id="16" name="" defaultPres="default" zOrder="-2">
+				<pres rotation="3.09563" pres="char.rear_shin" name="default">
+					<pos x="-0.0171695" y="0.0107389"/>
+					<scale x="0.00428818" y="0.00428818"/>
+				</pres>
+			</slot>
+			<color r="1" g="1" b="0" a="1" hex=""/>
+		</bones>
+		<bones name="r_foot" parent="dr_leg" id="14">
+			<begin x="0.102242" y="-0.357519"/>
+			<end x="0.280053" y="-0.369037"/>
+			<slot id="17" name="" defaultPres="default" zOrder="-4">
+				<pres rotation="1.62495" pres="char.rear_foot" name="default">
+					<pos x="-0.0214619" y="0.0236255"/>
+					<scale x="0.00428818" y="0.00428818"/>
+				</pres>
+			</slot>
+			<color r="1" g="1" b="0" a="1" hex=""/>
+		</bones>
+	</skeleton>
+	<physics>
+		<box pox_x="0.0172023" pox_y="-0.23196" hw="0.140374" hh="0.166668" friction="1" density="1" sensor="0" rotation="0" name="" parent=""/>
+		<box pox_x="0.20767" pox_y="0.270657" hw="0.0708429" hh="0.633129" friction="0" density="1" sensor="0" rotation="0" name="" parent=""/>
+		<box pox_x="-0.186333" pox_y="0.282012" hw="0.081148" hh="0.635521" friction="0" density="1" sensor="0" rotation="0" name="" parent=""/>
+		<box pox_x="0.0106679" pox_y="-0.358252" hw="0.219772" hh="0.0962207" friction="0" density="1" sensor="1" rotation="0" name="ground" parent=""/>
+		<box pox_x="0.0244009" pox_y="0.316153" hw="0.0824153" hh="0.388319" friction="1" density="1" sensor="1" rotation="1.50079" name="sword" parent="r_arm"/>
+	</physics>
+	<animations>
+		<animation name="attack" duration="0.06">
+			<event name="begin" time="0"/>
+			<event name="end" time="0.06"/>
+			<bone id="0">
+				<offset time="0" offset_x="-0.00476204" offset_y="0"/>
+				<rotate time="0" q_z="0" q_w="1"/>
+				<rotate time="0.03" q_z="0.0570513" q_w="0.998371"/>
+				<rotate time="0.06" q_z="-0.00816528" q_w="0.999967"/>
+			</bone>
+			<bone id="1">
+				<rotate time="0" q_z="0" q_w="1"/>
+				<rotate time="0.03" q_z="0.11533" q_w="0.993327"/>
+			</bone>
+			<bone id="4">
+				<rotate time="0" q_z="0" q_w="1"/>
+				<rotate time="0.03" q_z="0.288297" q_w="0.957541"/>
+				<rotate time="0.06" q_z="-0.225053" q_w="0.974346"/>
+			</bone>
+		</animation>
+		<animation name="hit" duration="0.06">
+			<bone id="8">
+				<rotate time="0" q_z="0.0293638" q_w="0.999569"/>
+				<rotate time="0.01" q_z="0.655951" q_w="0.754802"/>
+				<rotate time="0.06" q_z="0.0293638" q_w="0.999569"/>
+			</bone>
+		</animation>
+		<animation name="idle" duration="0.1">
+			<bone id="0">
+				<offset time="0" offset_x="0.01008" offset_y="0.00672271"/>
+				<offset time="0.03" offset_x="0.0289628" offset_y="-0.0163227"/>
+				<offset time="0.1" offset_x="0.01008" offset_y="0.00672271"/>
+				<rotate time="0" q_z="0.005902" q_w="0.999982"/>
+			</bone>
+			<bone id="9">
+				<offset time="0" offset_x="-0.00155068" offset_y="-0.00232895"/>
+				<rotate time="0" q_z="0.000468567" q_w="1"/>
+			</bone>
+			<bone id="10">
+				<offset time="0" offset_x="-0.0011865" offset_y="-0.00708664"/>
+				<rotate time="0" q_z="-0.00352135" q_w="-0.999957"/>
+			</bone>
+			<bone id="11">
+				<rotate time="0" q_z="-0.0122895" q_w="0.999924"/>
+			</bone>
+			<bone id="12">
+				<offset time="0" offset_x="0" offset_y="0"/>
+				<offset time="0.03" offset_x="0.0264625" offset_y="-0.0309996"/>
+				<offset time="0.1" offset_x="0" offset_y="0"/>
+				<rotate time="0" q_z="0" q_w="1"/>
+				<rotate time="0.03" q_z="0.120492" q_w="0.992718"/>
+				<rotate time="0.1" q_z="0" q_w="1"/>
+			</bone>
+			<bone id="13">
+				<rotate time="0" q_z="0" q_w="1"/>
+				<rotate time="0.03" q_z="-0.212457" q_w="0.97717"/>
+				<rotate time="0.1" q_z="0" q_w="1"/>
+			</bone>
+			<bone id="14">
+				<rotate time="0" q_z="0" q_w="1"/>
+				<rotate time="0.03" q_z="0.10889" q_w="0.994054"/>
+				<rotate time="0.1" q_z="0" q_w="1"/>
+			</bone>
+		</animation>
+		<animation name="jump" duration="0.1">
+			<bone id="9">
+				<rotate time="0" q_z="-0.016406" q_w="0.999865"/>
+				<rotate time="0.03" q_z="-0.396128" q_w="0.918195"/>
+				<rotate time="0.1" q_z="-0.00814926" q_w="0.999967"/>
+			</bone>
+			<bone id="12">
+				<rotate time="0" q_z="-0.0041686" q_w="0.99999"/>
+				<rotate time="0.03" q_z="0.572369" q_w="0.819996"/>
+				<rotate time="0.1" q_z="0.00759948" q_w="0.999971"/>
+			</bone>
+		</animation>
+		<animation name="laying" duration="0">
+			<bone id="0">
+				<rotate time="0" q_z="-0.697386" q_w="0.716695"/>
+			</bone>
+			<bone id="9">
+				<rotate time="0" q_z="-0.675193" q_w="0.737639"/>
+			</bone>
+			<bone id="12">
+				<rotate time="0" q_z="-0.826071" q_w="0.563567"/>
+			</bone>
+		</animation>
+		<animation name="stand_up" duration="0.05">
+			<bone id="0">
+				<rotate time="0" q_z="-0.697268" q_w="0.716811"/>
+				<rotate time="0.04" q_z="0.0344324" q_w="0.999407"/>
+			</bone>
+			<bone id="9">
+				<rotate time="0" q_z="-0.697807" q_w="0.716285"/>
+				<rotate time="0.04" q_z="-0.0151184" q_w="0.999884"/>
+			</bone>
+			<bone id="12">
+				<rotate time="0" q_z="-0.840553" q_w="0.541729"/>
+				<rotate time="0.04" q_z="0.00449473" q_w="0.999989"/>
+			</bone>
+		</animation>
+		<animation name="walk" duration="0.1">
+			<bone id="0">
+				<rotate time="0.05" q_z="0.0151004" q_w="0.999886"/>
+			</bone>
+			<bone id="9">
+				<rotate time="0" q_z="-0.24151" q_w="0.970398"/>
+				<rotate time="0.05" q_z="0.378838" q_w="0.925463"/>
+				<rotate time="0.1" q_z="-0.331589" q_w="0.943424"/>
+			</bone>
+			<bone id="12">
+				<rotate time="0" q_z="0.0199104" q_w="0.999801"/>
+				<rotate time="0.05" q_z="-0.545074" q_w="0.838388"/>
+				<rotate time="0.1" q_z="0.0199104" q_w="0.999801"/>
+			</bone>
+		</animation>
+	</animations>
+</character>
+

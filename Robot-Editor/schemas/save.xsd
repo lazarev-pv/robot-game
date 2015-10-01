@@ -1,0 +1,20 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:include schemaLocation="../../Core/schemas/common.xsd"/>
+
+    <xs:element name="saveData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="selectFilter" type="SelectFilterType"/>
+                <xs:element name="cameraPos" type="Point3D"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="SelectFilterType"  >
+        <xs:sequence>
+            <xs:element name="entityName"  maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

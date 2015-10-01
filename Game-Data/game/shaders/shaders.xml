@@ -1,0 +1,104 @@
+<shaders>
+    <shader name="sprite" file="sprite.glsl" >
+        <uniform name="s_texture" sampler="true" />
+        <uniform name="u_ambientLight" count="4" />
+        <uniform name="u_mvp_matrix" matrix="true"/>
+        <attribute name="a_position" offset="0" count="3"/>
+        <attribute name="a_texCoord" offset="3" count="2"/>
+    </shader>
+    <shader name="text" file="text.glsl" useDrawElements="false">
+        <uniform name="u_mvp_matrix" matrix="true"/>
+        <uniform name="s_texture" sampler="true" />
+        <uniform name="u_textColor" count="4" />
+        <attribute name="a_position" offset="0" count="4"/>
+        <attribute name="a_texCoord" offset="4" count="2"/>
+    </shader>
+    <shader name="healthbar" file="healthbar.glsl" >
+        <uniform name="s_texture" sampler="true" />
+        <uniform name="u_color" count="4" />
+        <uniform name="u_mvp_matrix" matrix="true"/>
+        <attribute name="a_position" offset="0" count="3"/>
+        <attribute name="a_texCoord" offset="3" count="2"/>
+    </shader>
+    <shader name="3d" file="3d.glsl" atrStep="8" >
+        <uniform name="s_texture" sampler="true" />
+        <uniform name="u_ambientLight" count="4" />
+        <uniform name="u_mvp_matrix" matrix="true" />
+        <attribute name="a_position" offset="0" count="3"/>
+        <attribute name="a_texCoord" offset="3" count="2"/>
+        <!--<attribute name="a_norm" offset="5" count="3"/>-->
+    </shader>
+    <shader name="simple" file="simple.glsl">
+        <uniform name="u_mvp_matrix" matrix="true"/>
+        <uniform name="u_color" count="4" />
+        <attribute name="a_position" offset="0" count="3"/>
+    </shader>
+    <shader name="blur" file="blur.glsl" >
+        <uniform name="u_mvp_matrix" matrix="true"/>
+        <uniform name="s_texture" sampler="true" />
+        <attribute name="a_position" offset="0" count="3"/>
+        <attribute name="a_texCoord" offset="3" count="2"/>
+    </shader>
+    <shader name="light" file="light.glsl">
+        <uniform name="u_light_tex" sampler="true" />
+        <uniform name="u_layer_tex" sampler="true" />
+        <uniform name="u_ambientLight" count="3" />
+        <attribute name="a_position" offset="0" count="3"/>
+        <attribute name="a_texCoord" offset="3" count="2"/>
+    </shader>
+    <shader name="rain" file="rain.glsl" useDrawElements="false">
+        <!--<uniform name="u_texture" sampler="true" />-->
+        <uniform name="u_mvp" matrix="true"/>
+        <uniform name="u_size" count="2" />
+        <uniform name="u_time" count="1" />
+        <uniform name="u_color" count="4" />
+        <attribute name="a_start" offset="0" count="3"/>
+        <attribute name="a_velocity" offset="3" count="2"/>
+        <attribute name="a_lifetime" offset="5" count="1"/>
+    </shader>
+    <shader name="splash" file="splash.glsl" useDrawElements="false">
+        <uniform name="u_mvp" matrix="true"/>
+        <uniform name="u_size" count="2" />
+        <uniform name="u_time" count="1" />
+        <attribute name="a_start" offset="0" count="3"/>
+        <attribute name="a_velocity" offset="3" count="2"/>
+        <attribute name="a_lifetime" offset="5" count="1"/>
+    </shader>
+    <shader name="fire" file="fire.glsl" useDrawElements="false">
+        <uniform name="u_texture" sampler="true" />
+        <uniform name="u_mvp" matrix="true"/>
+        <uniform name="u_size" count="2" />
+        <uniform name="u_time" count="1" />
+        <uniform name="u_dir" count="2" />
+        <attribute name="a_start" offset="0" count="3"/>
+        <attribute name="a_velocity" offset="3" count="2"/>
+        <attribute name="a_lifetime" offset="5" count="1"/>
+    </shader>
+    <shader name="steam" file="steam.glsl" useDrawElements="false">
+        <uniform name="u_texture" sampler="true" />
+        <uniform name="u_mvp" matrix="true"/>
+        <uniform name="u_size" count="2" />
+        <uniform name="u_time" count="1" />
+        <uniform name="u_dir" count="2" />
+        <uniform name="u_color" count="4" />
+        <attribute name="a_start" offset="0" count="3"/>
+        <attribute name="a_velocity" offset="3" count="2"/>
+      <!--  <attribute name="a_lifetime" offset="5" count="1"/>-->
+    </shader>
+    <shader name="explosion" file="explosion.glsl" useDrawElements="false">
+        <uniform name="u_texture" sampler="true" />
+        <uniform name="u_mvp" matrix="true"/>
+        <uniform name="u_size" count="2" />
+        <uniform name="u_time" count="1" />
+        <uniform name="u_color" count="4" />
+
+        <attribute name="a_lifetime" offset="0" count="1"/>
+        <attribute name="a_startPosition" offset="1" count="3"/>
+        <attribute name="a_endPosition" offset="4" count="3"/>
+    </shader>
+
+    <shader name="lightning" file="lightning.glsl" useDrawElements="false">
+        <uniform name="u_mvp" matrix="true"/>
+        <attribute name="a_atr" offset="0" count="4"/>
+    </shader>
+</shaders>

@@ -1,0 +1,7 @@
+<resources>
+    <sprite file="back.png" />
+    <sprite file="bone.png" />
+    <sprite file="rotate_instrument.png" />
+    <sprite file="instruments.atlas" />
+    <sprite file="buttons.atlas" />
+</resources>

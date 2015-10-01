@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+
+    <xs:element name="config">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="weapons" >
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="weapon" type="WeaponType" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="characters" >
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="character" type="CharacterSettingsType" minOccurs="0" maxOccurs="unbounded" />
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="camera" type="CameraConfigType" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="ColdStateType">
+        <xs:attribute name="duration" type="xs:float" />
+        <xs:attribute name="p" type="xs:float" />
+        <xs:attribute name="slowdown" type="xs:float" />
+    </xs:complexType>
+
+    <xs:complexType name="FireStateType">
+        <xs:attribute name="duration" type="xs:float" />
+        <xs:attribute name="p" type="xs:float" />
+    </xs:complexType>
+
+    <xs:complexType name="ShockStateType">
+        <xs:attribute name="duration" type="xs:float" />
+        <xs:attribute name="p" type="xs:float" />
+    </xs:complexType>
+
+
+    <xs:complexType name="WeaponUpgradeType">
+        <xs:sequence>
+            <xs:element name="fire" type="FireStateType" minOccurs="0" />
+            <xs:element name="cold" type="ColdStateType" minOccurs="0" />
+            <xs:element name="shock" type="ShockStateType" minOccurs="0" />
+        </xs:sequence>
+        <xs:attribute name="cost" type="xs:float" />
+        <xs:attribute name="tier" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="WeaponType">
+        <xs:sequence>
+            <xs:element name="upgrade" type="WeaponUpgradeType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="name" />
+        <xs:attribute name="damage" type="xs:float" />
+        <xs:attribute name="firingRate" type="xs:float" />
+        <xs:attribute name="closeHanded" type="xs:boolean" />
+        <xs:attribute name="collideSensor" type="xs:string" />
+    </xs:complexType>
+
+    <xs:complexType name="CharacterSettingsType">
+        <xs:sequence>
+            <xs:element name="weapon" type="WeaponType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="name" />
+        <xs:attribute name="file" />
+        <xs:attribute name="health" type="xs:float" />
+        <xs:attribute name="jumpVelocity" type="xs:float" />
+        <xs:attribute name="runVelocity" type="xs:float" />
+        <xs:attribute name="animationMultiplier" type="xs:float" />
+    </xs:complexType>
+
+    <xs:complexType name="CameraConfigType">
+        <xs:attribute name="xVelocity" type="xs:float" />
+        <xs:attribute name="yVelocity" type="xs:float" />
+
+        <!--<xs:attribute name="xForwardOffset" type="xs:float" />
+        <xs:attribute name="xForwardOffsetVelocity" type="xs:float" />
+        <xs:attribute name="xBackwardOffset" type="xs:float" />
+        <xs:attribute name="xBackwardOffsetVelocity" type="xs:float" />
+        <xs:attribute name="yOffset" type="xs:float" />
+        <xs:attribute name="yOffsetVelocity" type="xs:float" />-->
+    </xs:complexType>
+
+</xs:schema>

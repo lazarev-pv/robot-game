@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+
+	<xs:element name="shaders">
+		<xs:complexType>
+			<xs:sequence>
+                <xs:element name="shader" type="ShaderType" minOccurs="0" maxOccurs="unbounded" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:complexType name="ShaderType">
+        <xs:sequence>
+            <xs:element name="uniform" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="name" />
+                    <xs:attribute name="matrix" type="xs:boolean" default="false" />
+                    <xs:attribute name="count" type="xs:int" default="1" />
+                    <xs:attribute name="sampler" type="xs:boolean" default="false" />
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="attribute" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:attribute name="name" />
+                    <xs:attribute name="offset" type="xs:int" default="false" />
+                    <xs:attribute name="count" type="xs:int" default="1" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="name" />
+        <xs:attribute name="file" />
+        <xs:attribute name="atrStep" type="xs:int" default="-1"/>
+        <xs:attribute name="useDrawElements" type="xs:boolean" default="true" />
+    </xs:complexType>
+	
+</xs:schema>

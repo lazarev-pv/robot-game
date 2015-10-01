@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		  xsi:noNamespaceSchemaLocation="http://localhost/schema/settings.xsd">
+
+	<screen icon=""
+            title="ChibiTank"
+            x="100" y="100" width="1024" height="583"
+            shaders="../game/shaders/shaders.xml" />
+	<physics timeMultiply="1" 
+			 velocityIterations="8" 
+			 positionIterations="3"
+			 physicsStepDimension="0.005"
+			 calcTimeInterval="20">
+		<gravity x="0" y="-9.8" />
+	</physics>
+	<camera near="0.1" far="2000.0" x ="0" y="0" z ="30.5" fov ="1.57079632679" />
+
+	<gameStates initial="level1" userInterface="ui.xml" >
+		<state  name="level1" levelDescription="../game/levels/level1.xml" />
+	</gameStates>
+
+    <resources>
+        <description file="../game/particles/description.xml" />
+    </resources>
+</settings>

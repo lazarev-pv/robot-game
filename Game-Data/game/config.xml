@@ -1,0 +1,63 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://localhost/schema/robot_config.xsd" >
+
+    <weapons>
+        <weapon
+            name="bar"
+            damage="10"
+            firingRate="1.0"
+            closeHanded="true"
+            collideSensor="sword" />
+        <weapon
+            name="blaster"
+            damage="20"
+            closeHanded="false"
+            />
+        <weapon
+            name="sword"
+            damage="20"
+            firingRate="1.5"
+            closeHanded="true"
+            collideSensor="sword" >
+
+            <upgrade cost="100" tier="1" >
+                <fire duration="2.0" p="0.2" />
+            </upgrade>
+            <upgrade cost="100" tier="1" >
+                <cold duration="2.0" p="0.2" slowdown="0.5"/>
+            </upgrade>
+            <upgrade cost="500" tier="2" >
+                <shock duration="2.0" p="0.2" />
+            </upgrade>
+        </weapon>
+    </weapons>
+    <characters>
+        <character
+            name="char"
+            file="characters/char/char.xml"
+            health="100"
+            jumpVelocity="6"
+            runVelocity="2.5"
+            animationMultiplier="1.5" />
+
+        <character
+            name="zombie"
+            file="characters/zombie/zombie.xml"
+            health="30"
+            jumpVelocity="5"
+            runVelocity="1.2"
+            animationMultiplier="1.0">
+
+            <weapon
+                damage="10"
+                firingRate="1.5"
+                closeHanded="true" />
+        </character>
+
+    </characters>
+
+    <camera
+        xVelocity="0.09"
+        yVelocity="0.05"
+        />
+</config>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="texture">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sprite" type="SpriteDescrType" maxOccurs="unbounded"/>
+            </xs:sequence>
+            <xs:attribute name="file"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="SpriteDescrType">
+        <xs:sequence>
+            <xs:element name="frame" type="FrameType" minOccurs="0"/>
+            <xs:element name="animation" type="AnimationType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="name" />
+        <xs:attribute name="initialAnimation" />
+        <xs:attribute name="w" type="xs:float" default="-1" />
+        <xs:attribute name="h" type="xs:float" default="-1" />
+        <xs:attribute name="top" type="xs:float" default="-1" />
+        <xs:attribute name="left" type="xs:float" default="-1" />
+        <xs:attribute name="right" type="xs:float" default="-1" />
+        <xs:attribute name="bottom" type="xs:float" default="-1" />
+    </xs:complexType>
+
+    <xs:complexType name="FrameType">
+        <xs:attribute name="x1" type="xs:int" use="required"/>
+        <xs:attribute name="y1" type="xs:int" use="required"/>
+        <xs:attribute name="x2" type="xs:int" use="required"/>
+        <xs:attribute name="y2" type="xs:int" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="AnimationType">
+        <xs:sequence>
+            <xs:element name="frame" type="FrameType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="name" />
+        <xs:attribute name="cycled" type="xs:boolean" default="false" />
+        <xs:attribute name="frameTime" type="xs:int" default="1" />
+    </xs:complexType>
+
+</xs:schema>

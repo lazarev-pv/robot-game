@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:include schemaLocation="common.xsd" />
+    <xs:include schemaLocation="resources_description.xsd" />
+
+    <xs:element name="lookAndFeel" type="LookAndFeelType"/>
+    <xs:complexType name="LookAndFeelType">
+        <xs:sequence>
+            <xs:element name="resources" type="ResourceDescriptionList" />
+            <xs:element name="defaultColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="font" type="FontLAFType" minOccurs="0"/>
+            <xs:element name="buttons" type="ButtonLAFType" minOccurs="0"/>
+            <xs:element name="dialogs" type="DialogsLAFType" minOccurs="0"/>
+            <xs:element name="menu" type="MenuLAFType" minOccurs="0"/>
+            <xs:element name="inputField" type="InputFieldLAFType" minOccurs="0"/>
+            <xs:element name="checkbox" type="CheckboxLAFType" minOccurs="0"/>
+            <xs:element name="slider" type="SliderLAFType" minOccurs="0"/>
+            <xs:element name="rgbSlider" type="RGBSliderLAFType" minOccurs="0"/>
+            <xs:element name="labelsList" type="LabelsListLAFType" minOccurs="0"/>
+            <xs:element name="imagePicker" type="ImagePickerLAFType" minOccurs="0"/>
+            <xs:element name="healthbar" type="HealthbarLAFType" minOccurs="0"/>
+            <xs:element name="caption" type="CaptionLAFType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="FontLAFType">
+        <xs:sequence>
+            <xs:element name="textColor" type="ColorType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="size" type="xs:int"/>
+        <xs:attribute name="face" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="ButtonStateLAFType">
+        <xs:sequence>
+            <xs:element name="font" type="FontLAFType" minOccurs="0"/>
+            <xs:element name="backColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="borderColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="image" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="MenuLAFType">
+        <xs:sequence>
+            <xs:element name="font" type="FontLAFType" minOccurs="0"/>
+            <xs:element name="normalColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="hoveredColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="borderColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="padding" type="PaddingType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="borderThickness" type="xs:float"/>
+        <xs:attribute name="image"/>
+        <xs:attribute name="hoverImage"/>
+    </xs:complexType>
+
+    <xs:complexType name="CheckboxLAFType">
+        <xs:attribute name="normal_image"/>
+        <xs:attribute name="checked_image"/>
+        <xs:attribute name="hw" type="xs:float"/>
+        <xs:attribute name="hh" type="xs:float"/>
+    </xs:complexType>
+
+    <xs:complexType name="RGBSliderLAFType">
+        <xs:attribute name="hh" type="xs:float"/>
+        <xs:attribute name="colorHW" type="xs:float"/>
+    </xs:complexType>
+
+    <xs:complexType name="SliderLAFType">
+        <xs:sequence>
+            <xs:element name="recColor" type="ColorType"/>
+            <xs:element name="markColor" type="ColorType"/>
+            <xs:element name="texColor" type="ColorType"/>
+            <xs:element name="hoveredColor" type="ColorType"/>
+        </xs:sequence>
+        <xs:attribute name="baseHH" type="xs:float"/>
+        <xs:attribute name="hh" type="xs:float"/>
+        <xs:attribute name="markLen" type="xs:float"/>
+        <xs:attribute name="defaultPercision" type="xs:int" default="2"/>
+    </xs:complexType>
+
+    <xs:complexType name="ButtonLAFType">
+        <xs:sequence>
+            <xs:element name="normal" type="ButtonStateLAFType" minOccurs="0"/>
+            <xs:element name="hovered" type="ButtonStateLAFType" minOccurs="0"/>
+            <xs:element name="pushed" type="ButtonStateLAFType" minOccurs="0"/>
+            <xs:element name="padding" type="PaddingType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="borderThickness" type="xs:float"/>
+        <xs:attribute name="animatedImage"/>
+    </xs:complexType>
+
+    <xs:complexType name="DialogsLAFType">
+        <xs:sequence>
+            <xs:element name="capture" type="DialogCaptureLAFType" minOccurs="0"/>
+            <xs:element name="background" type="DialogBackgroundLAFType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="image"/>
+    </xs:complexType>
+
+    <xs:complexType name="DialogBackgroundLAFType">
+        <xs:sequence>
+            <xs:element name="backColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="borderColor" type="ColorType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="borderThickness" type="xs:float" default="0"/>
+    </xs:complexType>
+
+    <xs:complexType name="DialogCaptureLAFType">
+        <xs:sequence>
+            <xs:element name="font" type="FontLAFType" minOccurs="0"/>
+            <xs:element name="color" type="ColorType" minOccurs="0"/>
+            <xs:element name="controlButtons" type="ButtonLAFType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="height" type="xs:float" default="-1"/>
+        <xs:attribute name="controlsWidth" type="xs:float" default="-1"/>
+    </xs:complexType>
+
+
+    <xs:complexType name="InputFieldLAFType">
+        <xs:sequence>
+            <xs:element name="font" type="FontLAFType" minOccurs="0"/>
+            <xs:element name="backColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="disBackColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="selectColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="borderColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="selectedBorderColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="cursorColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="padding" type="PaddingType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="borderThickness" type="xs:float"/>
+        <xs:attribute name="cursorHW" type="xs:float"/>
+        <xs:attribute name="image"/>
+        <xs:attribute name="normal"/>
+        <xs:attribute name="focused"/>
+    </xs:complexType>
+
+    <xs:complexType name="PaddingType">
+        <xs:attribute name="left" type="xs:float" default="0.0"/>
+        <xs:attribute name="top" type="xs:float" default="0.0"/>
+        <xs:attribute name="right" type="xs:float" default="0.0"/>
+        <xs:attribute name="down" type="xs:float" default="0.0"/>
+    </xs:complexType>
+
+    <xs:complexType name="LabelsListLAFType">
+        <xs:sequence>
+            <xs:element name="padding" type="PaddingType" />
+            <xs:element name="normalTextColor" type="ColorType" />
+            <xs:element name="selectedTextColor" type="ColorType" />
+            <xs:element name="selectionColor" type="ColorType" />
+            <xs:element name="backgroundColor" type="ColorType" />
+            <xs:element name="borderColor" type="ColorType" />
+            <xs:element name="scroller" type="ScrollerLAFType" />
+        </xs:sequence>
+        <xs:attribute name="borderWidth" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="ScrollerLAFType">
+        <xs:sequence>
+            <xs:element name="backColor" type="ColorType" />
+            <xs:element name="borderColor" type="ColorType" />
+        </xs:sequence>
+        <xs:attribute name="width" type="xs:int" />
+        <xs:attribute name="height" type="xs:int" />
+        <xs:attribute name="borderWidth" type="xs:int" />
+        <xs:attribute name="hoveredImage" />
+        <xs:attribute name="image" />
+    </xs:complexType>
+
+    <xs:complexType name="ImagePickerLAFType">
+        <xs:sequence>
+            <xs:element name="labelsOffset" type="Point3D" />
+            <xs:element name="labelsSize" type="Point2D" />
+            <xs:element name="imageBorderColor" type="ColorType" />
+            <xs:element name="imageOffset" type="Point3D" />
+            <xs:element name="imageSize" type="Point2D" />
+            <xs:element name="baseSize" type="Point2D" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="HealthbarLAFType">
+        <xs:attribute name="hh" type="xs:float" />
+        <xs:attribute name="defaultPercision" type="xs:int" default="0"/>
+        <xs:attribute name="image" />
+        <xs:attribute name="backImage" />
+        <xs:attribute name="borderThickness" type="xs:float" />
+    </xs:complexType>
+
+    <xs:complexType name="CaptionLAFType">
+        <xs:sequence>
+            <xs:element name="color" type="ColorType" />
+            <xs:element name="textColor" type="ColorType" />
+        </xs:sequence>
+        <xs:attribute name="hh" type="xs:float" />
+
+    </xs:complexType>
+</xs:schema>

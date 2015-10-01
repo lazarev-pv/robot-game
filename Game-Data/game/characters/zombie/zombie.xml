@@ -1,0 +1,205 @@
+<character>
+	<resources>
+		<sprite name="" file="zombie.atlas" w="-1" h="-1" top="-1" left="-1" right="-1" bottom="-1"/>
+	</resources>
+	<skeleton>
+		<bones name="torso" parent="" id="0">
+			<begin x="0.000433102" y="-0.081616"/>
+			<end x="-0.0073369" y="0.369348"/>
+			<slot name="torso" defaultPres="default" zOrder="2">
+				<pres rotation="0" pres="zombie.ztorso" name="default">
+					<pos x="0.00429237" y="-0.0343645"/>
+					<scale x="0.0086" y="0.0086"/>
+				</pres>
+			</slot>
+		</bones>
+		<bones name="right fist" parent="torso" id="1">
+			<begin x="0.223609" y="0.166373"/>
+			<end x="0.336378" y="0.0995765"/>
+			<slot name="right fist" defaultPres="default" zOrder="0">
+				<pres rotation="1.59233" pres="zombie.zleft-hand" name="default">
+					<pos x="-0.0171696" y="-0.00429543"/>
+					<scale x="0.0086" y="0.0086"/>
+				</pres>
+			</slot>
+		</bones>
+		<bones name="left fist" parent="torso" id="2">
+			<begin x="-0.218479" y="0.158934"/>
+			<end x="-0.355834" y="0.0859102"/>
+			<slot name="left fist" defaultPres="default" zOrder="3">
+				<pres rotation="-2.46519" pres="zombie.zright-hand" name="default">
+					<pos x="-0.0026889" y="-0.0033497"/>
+					<scale x="0.0086" y="0.0086"/>
+				</pres>
+			</slot>
+		</bones>
+		<bones name="head" parent="torso" id="3">
+			<begin x="-0.0124444" y="0.451031"/>
+			<end x="0.00542058" y="0.656621"/>
+			<slot name="head" defaultPres="default" zOrder="0">
+				<pres rotation="0" pres="zombie.zhead" name="default">
+					<pos x="-0.00429237" y="0.00859118"/>
+					<scale x="0.0086" y="0.0086"/>
+				</pres>
+			</slot>
+			<slot name="zhair" defaultPres="default" zOrder="0">
+				<pres rotation="0" pres="zombie.zhair-1" name="default">
+					<pos x="0.184572" y="0.150344"/>
+					<scale x="0.0086" y="0.0086"/>
+				</pres>
+			</slot>
+		</bones>
+		<bones name="left leg" parent="" id="4">
+			<begin x="-0.169546" y="-0.250001"/>
+			<end x="-0.302609" y="-0.335912"/>
+			<slot name="left leg" defaultPres="default" zOrder="0">
+				<pres rotation="-2.13641" pres="zombie.zright-foot" name="default">
+					<pos x="0.00460085" y="-0.00724775"/>
+					<scale x="0.0086" y="0.0086"/>
+				</pres>
+			</slot>
+		</bones>
+		<bones name="right leg" parent="" id="5">
+			<begin x="0.318067" y="-0.225946"/>
+			<end x="0.455423" y="-0.359108"/>
+			<slot name="right leg" defaultPres="default" zOrder="0">
+				<pres rotation="2.37986" pres="zombie.zleft-foot" name="default">
+					<pos x="-0.00191988" y="-0.0274027"/>
+					<scale x="0.0086" y="0.0086"/>
+				</pres>
+			</slot>
+		</bones>
+	</skeleton>
+	<physics>
+		<box pox_x="0.0123883" pox_y="0.216839" hw="0.266129" hh="0.618561" friction="1" density="1" sensor="0" rotation="0" name="" parent=""/>
+		<box pox_x="0.00551421" pox_y="-0.0085911" hw="0.145942" hh="0.121994" friction="1" density="1" sensor="1" rotation="0" name="sword" parent="left fist"/>
+	</physics>
+	<animations>
+		<animation name="attack" duration="0.14" repeat="1">
+			<frame id="0">
+				<transition time="0" q_z="0" q_w="1" offset_x="0.0137373" offset_y="0.0584199"/>
+				<transition time="0.05" q_z="-0.026032" q_w="0.99966" offset_x="3.49246e-09" offset_y="-0.0103112"/>
+			</frame>
+			<frame id="1">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.03" q_z="0.34475" q_w="0.938694" offset_x="-0.137356" offset_y="0.0171822"/>
+				<transition time="0.05" q_z="0.408207" q_w="0.912889" offset_x="-0.485837" offset_y="0.00975344"/>
+				<transition time="0.08" q_z="0.40565" q_w="0.914028" offset_x="0.22673" offset_y="0.159813"/>
+				<transition time="0.11" q_z="0.490344" q_w="0.871528" offset_x="0.0858469" offset_y="0.0859115"/>
+			</frame>
+			<frame id="2">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.03" q_z="0.933445" q_w="0.358718" offset_x="0.779495" offset_y="0.109965"/>
+				<transition time="0.05" q_z="0.958893" q_w="0.283767" offset_x="0.707142" offset_y="0.0917144"/>
+				<transition time="0.08" q_z="0.916401" q_w="0.400261" offset_x="-0.103017" offset_y="-0.0171828"/>
+			</frame>
+			<frame id="3">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.05" q_z="0.118349" q_w="0.992971" offset_x="0" offset_y="0"/>
+			</frame>
+			<frame id="4">
+				<transition time="0" q_z="0" q_w="1" offset_x="-0.09958" offset_y="-5.58794e-07"/>
+			</frame>
+			<frame id="5">
+				<transition time="0" q_z="0" q_w="1" offset_x="-0.0824136" offset_y="0.0103097"/>
+			</frame>
+		</animation>
+		<animation name="hit" duration="0.11" repeat="0">
+			<frame id="0">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.03" q_z="0.155588" q_w="0.987822" offset_x="0.00686651" offset_y="-0.113403"/>
+			</frame>
+			<frame id="2">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.03" q_z="0.61636" q_w="0.787463" offset_x="0" offset_y="0"/>
+			</frame>
+			<frame id="3">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.03" q_z="-0.123541" q_w="0.992339" offset_x="0" offset_y="0"/>
+			</frame>
+		</animation>
+		<animation name="idle" duration="0.11" repeat="1">
+			<frame id="0">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.04" q_z="0" q_w="1" offset_x="0.00543166" offset_y="0.0190749"/>
+			</frame>
+			<frame id="1">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.04" q_z="0" q_w="1" offset_x="-0.00441787" offset_y="-0.0519213"/>
+			</frame>
+			<frame id="2">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.04" q_z="0" q_w="1" offset_x="0.0244894" offset_y="-0.112819"/>
+			</frame>
+			<frame id="3">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.04" q_z="0" q_w="1" offset_x="0.0250012" offset_y="-0.050027"/>
+			</frame>
+			<frame id="4">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.044" q_z="0" q_w="1" offset_x="-0.00883575" offset_y="0.00442275"/>
+			</frame>
+			<frame id="5">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.044" q_z="0" q_w="1" offset_x="-0.0176715" offset_y="2.44379e-06"/>
+			</frame>
+		</animation>
+		<animation name="jump" duration="0.15" repeat="0">
+			<frame id="0">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.03" q_z="0.116026" q_w="0.993246" offset_x="-0.0515084" offset_y="0"/>
+				<transition time="0.07" q_z="0.138308" q_w="0.990389" offset_x="0" offset_y="0"/>
+			</frame>
+			<frame id="1">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.03" q_z="0.415739" q_w="0.909484" offset_x="0" offset_y="0"/>
+				<transition time="0.07" q_z="0.631872" q_w="0.775072" offset_x="0.0579539" offset_y="0.12646"/>
+			</frame>
+			<frame id="2">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.03" q_z="-0.624155" q_w="0.7813" offset_x="-0.0147793" offset_y="0.00365794"/>
+				<transition time="0.07" q_z="-0.723611" q_w="0.690207" offset_x="-0.0425531" offset_y="0.014394"/>
+			</frame>
+			<frame id="3">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.03" q_z="-0.126545" q_w="0.991961" offset_x="0" offset_y="0"/>
+			</frame>
+			<frame id="4">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.03" q_z="0" q_w="1" offset_x="-0.0196894" offset_y="0.0684698"/>
+			</frame>
+			<frame id="5">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.03" q_z="0" q_w="1" offset_x="-0.063878" offset_y="0.204277"/>
+			</frame>
+		</animation>
+		<animation name="walk" duration="0.18" repeat="1">
+			<frame id="0">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.04" q_z="0" q_w="1" offset_x="0.00441849" offset_y="0.0221102"/>
+				<transition time="0.06" q_z="0" q_w="1" offset_x="0.00492415" offset_y="-0.0266621"/>
+				<transition time="0.09" q_z="0" q_w="1" offset_x="0.00883758" offset_y="0.0204624"/>
+				<transition time="0.12" q_z="0" q_w="1" offset_x="-0.0171695" offset_y="-0.0171818"/>
+				<transition time="0.14" q_z="0" q_w="1" offset_x="0" offset_y="0.0274126"/>
+			</frame>
+			<frame id="4">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.04" q_z="0" q_w="1" offset_x="-0.152374" offset_y="0.20126"/>
+				<transition time="0.06" q_z="0" q_w="1" offset_x="-0.178887" offset_y="0.310277"/>
+				<transition time="0.09" q_z="0" q_w="1" offset_x="0.502449" offset_y="0.266056"/>
+				<transition time="0.12" q_z="0" q_w="1" offset_x="0.524156" offset_y="-0.0331056"/>
+				<transition time="0.14" q_z="0" q_w="1" offset_x="0.101631" offset_y="-0.0176874"/>
+			</frame>
+			<frame id="5">
+				<transition time="0" q_z="0" q_w="1" offset_x="0" offset_y="0"/>
+				<transition time="0.04" q_z="0" q_w="1" offset_x="-0.429237" offset_y="0"/>
+				<transition time="0.06" q_z="0" q_w="1" offset_x="-0.530478" offset_y="-0.0491472"/>
+				<transition time="0.09" q_z="0" q_w="1" offset_x="-0.617959" offset_y="-0.00985461"/>
+				<transition time="0.12" q_z="0" q_w="1" offset_x="-0.713137" offset_y="0.158931"/>
+				<transition time="0.14" q_z="0" q_w="1" offset_x="-0.42378" offset_y="0.317227"/>
+				<transition time="0.16" q_z="0" q_w="1" offset_x="-0.236705" offset_y="0.269092"/>
+			</frame>
+		</animation>
+	</animations>
+</character>
+

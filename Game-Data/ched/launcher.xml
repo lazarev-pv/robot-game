@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<settings>
+	<!--<screen icon="" title="Character Editor" x="0" y="0" width="800" height="600" shaders="../game/shaders/shaders.xml" />-->
+	<screen icon=""
+            title="Character Editor"
+            x="0" y="0"
+            width="1280" height="1024"
+            shaders="../game/shaders/shaders.xml"
+            depthTest="false"/>
+
+	<camera near="0.005" far="100.0" x ="0.5" y="0" z ="1.0" fov ="1.57079632679" />
+
+	<gameStates initial="char" userInterface="ui.xml" >
+		<state name="char" levelDescription="../game/characters/char/char.xml" />
+        <state name="zombie" levelDescription="../game/characters/zombie/zombie.xml" />
+	</gameStates>
+
+	<properties>
+		<property name="settings" value="config.xml" />
+	</properties>
+
+    <resources>
+        <description file="description.xml" />
+        <description file="../game/particles/description.xml" />
+    </resources>
+</settings>

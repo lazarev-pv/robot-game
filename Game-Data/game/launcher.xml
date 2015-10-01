@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<settings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		  xsi:noNamespaceSchemaLocation="http://localhost/schema/settings.xsd">
+
+	<screen icon=""
+            title="ChibiTank"
+            x="100" y="100" width="1024" height="583"
+            shaders="shaders/shaders.xml"
+             />
+    <!--depthTest="true" blending="true"-->
+	<physics timeMultiply="1" 
+			 velocityIterations="8" 
+			 positionIterations="6"
+			 physicsStepDimension="2"
+			 calcTimeInterval="-1">
+		<gravity x="0" y="-9.8" />
+	</physics>
+	<camera near="0.1" far="20.0" x ="0" y="0" z ="30.5" fov ="1.57079632679" />
+
+	<gameStates initial="level1" userInterface="ui.xml" >
+		<state  name="level1" levelDescription="levels/level1.xml"/> 
+	</gameStates>
+
+	<inputConfig activeProfile="pc">
+		<profile name="pc">
+			<key code="100" event="forward" />
+			<key code="97" event="backward" />
+			<key code="32" event="jump" /> 
+			<key code="115" event="attack" />
+			<key code="102" event="debug" />
+            <key code="103" event="pres" />
+            <key code="101" event="interact" />
+		</profile>
+	</inputConfig>
+	
+	<properties>
+		<property name="settings" value="config.xml" />
+	</properties>
+    
+    <resources>
+        <description file="audio/description.xml" />
+        <description file="particles/description.xml" />
+    </resources>
+</settings>

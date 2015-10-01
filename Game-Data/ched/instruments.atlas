@@ -1,0 +1,8 @@
+<texture file="instruments.png">
+    <sprite name="move_instrument" w="32" h="64">
+        <frame x1="0" y1="0" x2="31" y2="63" />
+    </sprite>
+    <sprite name="scale_instrument" w="32" h="64">
+        <frame x1="32" y1="0" x2="63" y2="63" />
+    </sprite>
+</texture>

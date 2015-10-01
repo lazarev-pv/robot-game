@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="http://localhost/schema/user_interface.xsd"
+               lookAndFeel="../game/ui/laf.xml">
+
+    <menu name="menu">
+        <elem name="file">
+            <elem name="save"/>
+        </elem>
+        <elem name="animation">
+            <elem name="new animation"/>
+            <elem name="remove animation"/>
+        </elem>
+        <elem name="instrument">
+            <elem name="move"   />
+            <elem name="rotate" />
+            <elem name="scale"  />
+        </elem>
+        <elem name="slot">
+            <elem name = "add" />
+            <elem name = "slots" />
+            <elem name = "set default" />
+        </elem>
+        <elem name="view">
+            <elem name="Properties" />
+            <elem name="Draw Settings" />
+            <elem name="Events" />
+            <elem name="Targets" />
+            <elem name="Timeline" />
+        </elem>
+    </menu>
+    
+    <slot x="-0.8" y="0" z="-1" hw="0.2" name="targets" >
+        <lineContainer yIntent="0.01" xIntent="0.005" caption="Targets">
+            <backColor hex="565656" a="0.5"/>
+            <line weight="">
+                <slot name="workTarget">
+                    <ddlb text="animation">
+                        <elem name="animation"/>
+                        <elem name="char"/>
+                    </ddlb>
+                </slot>
+            </line>
+            <line weight="50">
+                <slot>
+                    <text text="Character"/>
+                </slot>
+                <slot name="charName" z="-0.1">
+                    <ddlb text="char">
+                        <elem name="char"/>
+                        <elem name="zombie"/>
+                    </ddlb>
+                </slot>
+            </line>
+            <line weight="50">
+                <slot>
+                    <text text="Animation:"/>
+                </slot>
+                <slot name="setAnimDDLB">
+                    <ddlb text="select animation"/>
+                </slot>
+            </line>
+            <line weight="50">
+                <slot>
+                    <text text="play multy"/>
+                </slot>
+                <slot name="playbackMultiplier">
+                    <input value="1.0">
+                        <onlyDigits/>
+                    </input>
+                </slot>
+            </line>
+        </lineContainer>
+        
+    </slot>
+
+    <slot x="-0.8" y="0" z="-1" hw="0.2" name="draw" >
+        <tableContainer intent="0.005" caption="Draw">
+            <backColor hex="565656" a="0.5"/>
+            <weight>0.4</weight>
+            <weight>0.3</weight>
+
+            <slot>
+                <text text=""/>
+            </slot>
+            <slot>
+                <text text="draw"/>
+            </slot>
+            <slot>
+                <text text="select"/>
+            </slot>
+
+            <slot>
+                <text text="bones"/>
+            </slot>
+            <slot name="drawBones">
+                <checkbox value="true"/>
+            </slot>
+            <slot name="selectBones">
+                <checkbox value="true"/>
+            </slot>
+
+            <slot>
+                <text text="pics"/>
+            </slot>
+            <slot name="drawPics">
+                <checkbox value="true"/>
+            </slot>
+            <slot name="selectPics">
+                <checkbox value="true"/>
+            </slot>
+
+            <slot>
+                <text text="phys"/>
+            </slot>
+            <slot name="drawBoxes">
+                <checkbox value="true"/>
+            </slot>
+            <slot name="selectBoxes">
+                <checkbox value="true"/>
+            </slot>
+
+        </tableContainer>
+    </slot>
+
+    <slot x="0.6" y="-0.022" z="-1" hw="0.2" hh="0.973" name="events">
+        <lineContainer caption="Events" xIntent="0.01" yIntent="0.01">
+            <line weight="">
+                <slot hh="0.2" name="eventList">
+                    <labelsList />
+                </slot>
+            </line>
+            <line weight="33;33">
+                <slot name="add2EventList">
+                   <button text="add" />
+                </slot>
+                <slot name="removeFromEventList">
+                    <button text="delete" />
+                </slot>
+                <slot>
+                    <button text="attach" />
+                </slot>
+            </line>
+        </lineContainer>
+    </slot>
+
+    <slot x="0.8" y="-0.022" z="-1" hw="0.2" hh="0.973" name="properties">
+        <tableContainer intent="0.005" caption="properties">
+            <backColor hex="565656" a="0.5"/>
+            <slot hw="0.2" z="-0.9" name="conSelector">
+                <containerSelector initial="bone">
+                    <slot hw="0.2" z="-0.8" name="bone">
+                        <lineContainer xIntent="0.005" yIntent="0.01">
+                            <line weight="40">
+                                <slot><text text="name"/></slot>
+                                <slot name="bone.name"><input><all maxSize="10"/></input></slot>
+                            </line>
+                            <line weight="40">
+                                <slot><text text="parent"/></slot>
+                                <slot name="bone.parent" enabled="false"><input><all maxSize="10"/></input></slot>
+                            </line>
+                            <line weight="40">
+                                <slot><text text="color" /></slot>
+                                <slot name="bone.color"><rgb><color hex="FFFFFF"/></rgb></slot>
+                            </line>
+                            <line weight="40;30">
+                                <slot><text text="pos:"/></slot>
+                                <slot name="bone.pos.x" enabled="false"><input><onlyDigits maxSize="7"/></input></slot>
+                                <slot name="bone.pos.y" enabled="false"><input><onlyDigits maxSize="7"/></input></slot>
+                            </line>
+                            <line weight="40;30">
+                                <slot><text text="scale:"/></slot>
+                                <slot name="bone.scale.x" enabled="false"><input><onlyDigits maxSize="7"/></input></slot>
+                                <slot name="bone.scale.y" enabled="false"><input><onlyDigits maxSize="7"/></input></slot>
+                            </line>
+                            <line weight="40">
+                                <slot><text text="angle:"/></slot>
+                                <slot name="bone.angle" enabled="false"><input><onlyDigits maxSize="7"/></input></slot>
+                            </line>
+                        </lineContainer>
+                    </slot>
+                    <slot hw="0.2" z="-0.8" name="pic">
+                        <tableContainer intent="0.005">
+                            <weight>0.4</weight>
+                            <slot><text text="name"/></slot>
+                            <slot name="pic.name"><input><all maxSize="10"/></input></slot>
+                            <slot><text text="parent"/></slot>
+                            <slot name="pic.parent" enabled="false"><input><all maxSize="10"/></input></slot>
+                            <slot><text text="zOrder"/></slot>
+                            <slot name="pic.zOrder"><input><onlyDigits/></input></slot>
+                        </tableContainer>
+                    </slot>
+                    <slot hw="0.2" z="-0.8" name="box">
+                        <tableContainer intent="0.005">
+                        <weight>0.4</weight>
+                            <slot><text text="name"/></slot>
+                            <slot name="box.name"><input><all maxSize="10"/></input></slot>
+
+                            <slot><text text="parent"/></slot>
+                            <slot name="box.parent" enabled="false"><input><all maxSize="10"/></input></slot>
+
+                            <slot><text text="friction"/></slot>
+                            <slot name="box.friction"><input><onlyDigits maxSize="10"/></input></slot>
+
+                            <slot><text text="density"/></slot>
+                            <slot name="box.density"><input><onlyDigits maxSize="10"/></input></slot>
+
+                            <slot><text text="sensor"/></slot>
+                            <slot name="box.sensor"><checkbox value="false"/></slot>
+
+                        </tableContainer>
+                    </slot>
+                </containerSelector>
+            </slot>
+        </tableContainer>
+    </slot>
+    <slot name="bone_menu" visible="false">
+        <context>
+            <elem name="add child"/>
+            <elem name="set presentation"/>
+            <elem name="add physics box"/>
+        </context>
+    </slot>
+    <slot name="ched_menu" visible="false">
+        <context>
+            <elem name="add bone"/>
+            <elem name="add physics box"/>
+        </context>
+    </slot>
+
+    <slot name="image_dialog" hw="0.42" hh="0.60" visible="false">
+        <dialog capture="Select Image">
+            <slot name="image_picker" y="-0.00" hw="0.4" hh="0.5" z="0.1">
+                <imagePicker/>
+            </slot>
+            <slot y="-0.55" z="0.1" name="image_picker.select">
+                <button text="ok"/>
+            </slot>
+        </dialog>
+    </slot>
+
+    <slot name="backDiv"  hw="1" hh="1" z="10" visible="false">
+        <tableContainer>
+            <backColor hex="000000" a="0.8"/>
+            <slot hw="1" hh="1" z="10">
+                <text text="" />
+            </slot>
+        </tableContainer>
+    </slot>
+
+    <slot name="input_name_dialog" hw="0.2" visible="false" z="11" >
+        <lineContainer yIntent="0.01" xIntent="0.01" >
+            <backColor hex="565656" a="1"/>
+            <line weight="">
+                <slot z="12" name="input_name_title">
+                    <text text="" />
+                </slot>
+            </line>
+            <line weight="">
+                <slot name="new_name" hh="0.05" z="12" >
+                    <input>
+                        <all />
+                    </input>
+                </slot>
+            </line>
+            <line weight="50">
+                <slot name="okName" z="12">
+                    <button text="ok"/>
+                </slot>
+                <slot name="cancelName" z="12">
+                    <button text="cancel" />
+                </slot>
+            </line>
+        </lineContainer>
+    </slot>
+
+    <slot name="slot_images_dialog" hw="0.42" hh="0.55" visible="false">
+        <dialog capture="Select Image">
+            <slot name="slot_images" y="0.05" hw="0.4" hh="0.5" z="0.1">
+                <imagePicker/>
+            </slot>
+            <slot y="-0.50" z="0.1" name="slot_images.select">
+                <button text="ok"/>
+            </slot>
+        </dialog>
+    </slot>
+
+
+    <slot name="new_slot_image_dialog" hw="0.42" hh="0.55" visible="false" >
+        <dialog capture="Select Image">
+            <slot name="new_slot_image" y="0.05" hw="0.4" hh="0.5" z ="0.1">
+                <imagePicker />
+            </slot>
+
+            <slot name="slot_img_name" x="0" y="-0.4" z="1.5" hw="0.2" hh="0.05">
+                <input><all maxSize="10" /></input>
+            </slot>
+
+            <slot y="-0.50" z="0.1" name="new_slot_image.select" >
+                <button text="ok" />
+            </slot>
+        </dialog>
+    </slot>
+
+   <!-- <slot name="anim_dialog" hw="0.38" hh="0.3" z="0.0" visible="false">
+        <dialog capture="New Animation">
+            <slot hw="0.36">
+                <tableContainer intent="0.03">
+                    <weight>0.3</weight>
+                    <slot>
+                        <text text="New animation"/>
+                    </slot>
+                    <slot name="animName" hw="0.19" z="1.0">
+                        <input value="new animation">
+                            <all maxSize="10"/>
+                        </input>
+                    </slot>
+                </tableContainer>
+            </slot>
+            <slot name="saveAnimName" z="2" visible="false" x="0.0" y="-0.2">
+                <button text="create"/>
+            </slot>
+        </dialog>
+    </slot>-->
+</userInterface>

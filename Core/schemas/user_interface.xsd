@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:include schemaLocation="common.xsd" />
+
+    <xs:element name="userInterface">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="menu" type="MenuType" minOccurs="0"/>
+                <xs:element name="slot" minOccurs="0" maxOccurs="unbounded" type="SlotType"/>
+            </xs:sequence>
+            <xs:attribute name="scriptsFile"/>
+            <xs:attribute name="lookAndFeel"/>
+        </xs:complexType>
+    </xs:element>
+
+    <!-- - - - - - - - SLOTS - - - - - - - - -->
+
+    <xs:complexType name="SlotType">
+        <xs:choice>
+            <xs:element name="button" type="ButtonSlot"/>
+            <xs:element name="text" type="TextSlot"/>
+            <xs:element name="image" type="ImageSlot"/>
+            <xs:element name="ddlb" type="DDLBSlot"/>
+            <xs:element name="input" type="InputSlot"/>
+            <xs:element name="context" type="ContextMenuSlot"/>
+            <xs:element name="dialog" type="DialogSlot"/>
+            <xs:element name="imagePicker" type="ImagePickerSlot"/>
+            <xs:element name="checkbox" type="CheckBoxSlot"/>
+            <xs:element name="slider" type="SliderSlot"/>
+            <xs:element name="rgb" type="RGBSlot"/>
+            <xs:element name="radio" type="RadioSlot"/>
+            <xs:element name="labelsList" type="LabelsListSlot" />
+            <xs:element name="tableContainer" type="TableContainerSlot"/>
+            <xs:element name="lineContainer" type="LineContainerSlot"/>
+            <xs:element name="containerSelector" type="ContainerSelectorSlot"/>
+            <xs:element name="healthbar" type="HealthbarSlot" />
+        </xs:choice>
+        <xs:attribute name="x" type="xs:float" default="0"/>
+        <xs:attribute name="y" type="xs:float" default="0"/>
+        <xs:attribute name="z" type="xs:float" default="0"/>
+
+        <xs:attribute name="hw" type="xs:float" default="-1"/>
+        <xs:attribute name="hh" type="xs:float" default="-1"/>
+        <xs:attribute name="name"/>
+        <xs:attribute name="visible" type="xs:boolean" default="true"/>
+        <xs:attribute name="enabled" type="xs:boolean" default="true"/>
+    </xs:complexType>
+
+
+    <!-- ______________ CONTAINER __________________ -->
+    <xs:complexType name="TableContainerSlot">
+        <xs:sequence>
+            <xs:element name="backColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="weight" type="xs:float" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="slot" minOccurs="0" maxOccurs="unbounded" type="SlotType"/>
+        </xs:sequence>
+        <xs:attribute name="intent" type="xs:float"/>
+        <xs:attribute name="drawLines" type="xs:boolean" default="false" />
+        <xs:attribute name="align"/>
+        <xs:attribute name="caption" />
+    </xs:complexType>
+
+    <!-- ______________ IMAGE __________________ -->
+    <xs:complexType name="ImageSlot">
+        <xs:attribute name="presentation" type="xs:string" use="required"/>
+    </xs:complexType>
+
+    <!-- ______________ BUTTON __________________ -->
+    <xs:complexType name="ButtonSlot">
+        <xs:sequence>
+            <xs:element name="image" type="ButtonImageType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="text"/>
+        <xs:attribute name="script"/>
+    </xs:complexType>
+
+    <xs:complexType name="ButtonImageType">
+        <xs:attribute name="normal" />
+        <xs:attribute name="hovered" />
+        <xs:attribute name="pushed" />
+    </xs:complexType>
+
+    <!-- ______________ TEXT __________________ -->
+    <xs:complexType name="TextSlot">
+        <xs:attribute name="text"/>
+    </xs:complexType>
+
+    <!-- ______________ DDLBSlot __________________ -->
+    <xs:complexType name="DDLBSlot">
+        <xs:sequence>
+            <xs:element name="elem" minOccurs="0" maxOccurs="unbounded" type="DDLBElemType"/>
+        </xs:sequence>
+        <xs:attribute name="text"/>
+    </xs:complexType>
+
+    <xs:complexType name="DDLBElemType">
+        <xs:attribute name="name"/>
+    </xs:complexType>
+
+
+    <!-- ______________ ContextMenuSlot __________________ -->
+
+    <xs:complexType name="ContextMenuSlot">
+        <xs:sequence>
+            <xs:element name="elem" minOccurs="0" maxOccurs="unbounded" type="ContextMenuElemType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ContextMenuElemType">
+        <xs:sequence>
+            <xs:element name="elem" minOccurs="0" maxOccurs="unbounded" type="ContextMenuElemType"/>
+        </xs:sequence>
+        <xs:attribute name="name"/>
+    </xs:complexType>
+
+    <!-- ______________ MenuType __________________ -->
+    <xs:complexType name="MenuType">
+        <xs:sequence>
+            <xs:element name="elem" minOccurs="0" maxOccurs="unbounded" type="ContextMenuElemType"/>
+        </xs:sequence>
+        <xs:attribute name="name"/>
+    </xs:complexType>
+
+    <!-- ______________ InputSlot __________________ -->
+    <xs:complexType name="InputSlot">
+        <xs:choice>
+            <xs:element name="onlyDigits" type="OnlyDigitsFilterType"/>
+            <xs:element name="all" type="AllFilterType"/>
+        </xs:choice>
+        <xs:attribute name="value"/>
+    </xs:complexType>
+
+    <xs:complexType name="OnlyDigitsFilterType">
+        <xs:attribute name="maxSize" type="xs:int"/>
+    </xs:complexType>
+
+    <xs:complexType name="AllFilterType">
+        <xs:attribute name="maxSize" type="xs:int" default="10"/>
+    </xs:complexType>
+
+    <!-- ______________ DialogSlot __________________ -->
+    <xs:complexType name="DialogSlot">
+        <xs:sequence>
+            <xs:element name="slot" minOccurs="0" maxOccurs="unbounded" type="SlotType"/>
+        </xs:sequence>
+        <xs:attribute name="capture"/>
+    </xs:complexType>
+
+    <!-- ______________ ImagePickerSlot __________________ -->
+    <xs:complexType name="ImagePickerSlot">
+    </xs:complexType>
+
+    <!-- ______________ CheckBoxSlot __________________ -->
+    <xs:complexType name="CheckBoxSlot">
+        <xs:attribute name="value" type="xs:boolean"/>
+        <xs:attribute name="script"/>
+    </xs:complexType>
+
+    <!-- ______________ RadioSlot __________________ -->
+    <xs:complexType name="RadioSlot">
+        <xs:attribute name="value" type="xs:boolean"/>
+        <xs:attribute name="group" type="xs:string"/>
+    </xs:complexType>
+
+    <!-- ______________ SliderSlot __________________ -->
+    <xs:complexType name="SliderSlot">
+        <xs:attribute name="min" type="xs:float"/>
+        <xs:attribute name="max" type="xs:float"/>
+        <xs:attribute name="value" type="xs:float"/>
+        <xs:attribute name="percision" type="xs:int" default="-1"/>
+     </xs:complexType>
+
+    <!-- ______________ RGBSlot __________________ -->
+    <xs:complexType name="RGBSlot">
+        <xs:sequence>
+            <xs:element name="color" type="ColorType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- ______________ LabelsListSlot __________________ -->
+    <xs:complexType name="LabelsListSlot">
+        <xs:sequence>
+            <xs:element name="elem" type="TextSlot" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- ______________ LineContainerSlot __________________ -->
+    <xs:complexType name="LineContainerSlot" >
+        <xs:sequence>
+            <xs:element name="backColor" type="ColorType" minOccurs="0"/>
+            <xs:element name="line" maxOccurs="unbounded" type="ContainerLineType" />
+        </xs:sequence>
+        <xs:attribute name="yIntent" type="xs:float" />
+        <xs:attribute name="xIntent" type="xs:float" />
+        <xs:attribute name="caption" />
+    </xs:complexType>
+
+    <xs:complexType name="ContainerLineType">
+        <xs:sequence>
+            <xs:element name="slot" type="SlotType" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="weight" type="xs:string" />
+    </xs:complexType>
+
+    <!-- ______________ ContainerSelectorSlot __________________ -->
+    <xs:complexType name="ContainerSelectorSlot" >
+        <xs:sequence>
+            <xs:element name="slot" maxOccurs="unbounded" type="SlotType" />
+        </xs:sequence>
+        <xs:attribute name="initial" />
+    </xs:complexType>
+
+    <!-- ______________ HealthbarSlot __________________ -->
+    <xs:complexType name="HealthbarSlot">
+        <xs:sequence>
+            <xs:element name="color" type="ColorType" />
+        </xs:sequence>
+        <xs:attribute name="min" type="xs:float"/>
+        <xs:attribute name="max" type="xs:float"/>
+        <xs:attribute name="value" type="xs:float"/>
+        <xs:attribute name="percision" type="xs:int" default="-1"/>
+    </xs:complexType>
+
+</xs:schema>

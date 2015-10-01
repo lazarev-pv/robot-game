@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xsi:noNamespaceSchemaLocation="http://localhost/schema/user_interface.xsd"
+               lookAndFeel="../game/ui/laf.xml" >
+
+    <menu name="menu">
+        <elem name="file">
+            <elem name="settings"/>
+            <elem name="save"/>
+            <elem name="save camera"/>
+        </elem>
+        <elem name="weather">
+            <elem name="global light"/>
+        </elem>
+        <elem name="layers">
+            <elem name="add"/>
+            <elem name="delete"/>
+        </elem>
+    </menu>
+    <slot x="0.7" y="-0.022" hh="0.973" z="-1" hw="0.3" align="right">
+        <tableContainer intent="0.02" align="top">
+            <backColor r="0.78125" g="0.703125" b="0.78125" a="1"/>
+            <slot hw="0.28" z="-0.5">
+                <tableContainer intent="0.01">
+                    <weight>0.25</weight>
+                    <weight>0.25</weight>
+                    <weight>0.25</weight>
+
+                    <slot><text text="type"/></slot>
+                    <slot><text text="select"/></slot>
+                    <slot><text text="type"/></slot>
+                    <slot><text text="select"/></slot>
+
+                    <slot><text text="pres2d"/></slot>
+                    <slot name="select.pres2d">
+                        <checkbox value="true" script="editor_updateFilter(&quot;pres2d&quot;)"/>
+                    </slot>
+                    <slot><text text="pres3d"/></slot>
+                    <slot name="select.pres3d">
+                        <checkbox value="true" script="editor_updateFilter(&quot;pres3d&quot;)"/>
+                    </slot>
+
+                    <slot><text text="geomChain"/></slot>
+                    <slot name="select.geomChain">
+                        <checkbox value="true" script="editor_updateFilter(&quot;geomChain&quot;)"/>
+                    </slot>
+                    <slot><text text="geomObject"/></slot>
+                    <slot name="select.geomObject">
+                        <checkbox value="true" script="editor_updateFilter(&quot;geomObject&quot;)"/>
+                    </slot>
+
+                    <slot><text text="geomJoint"/></slot>
+                    <slot name="select.geomJoint">
+                        <checkbox value="true" script="editor_updateFilter(&quot;geomJoint&quot;)"/>
+                    </slot>
+                    <slot><text text="spotLight"/></slot>
+                    <slot name="select.spotLight">
+                        <checkbox value="true" script="editor_updateFilter(&quot;spotLight&quot;)"/>
+                    </slot>
+
+                    <slot><text text="dirLight"/></slot>
+                    <slot name="select.dirLight">
+                        <checkbox value="true" script="editor_updateFilter(&quot;dirLight&quot;)"/>
+                    </slot>
+                    <slot><text text="fxObject"/></slot>
+                    <slot name="select.fxObject">
+                        <checkbox value="true" script="editor_updateFilter(&quot;fxObject&quot;)"/>
+                    </slot>
+
+                    <slot><text text="event"/></slot>
+                    <slot name="select.event">
+                        <checkbox value="true" script="editor_updateFilter(&quot;event&quot;)"/>
+                    </slot>
+                    <slot><text text="enemy"/></slot>
+                    <slot name="select.enemy">
+                        <checkbox value="true" script="editor_updateFilter(&quot;enemy&quot;)"/>
+                    </slot>
+
+                    <slot><text text="point"/></slot>
+                    <slot name="select.point">
+                        <checkbox value="true" script="editor_updateFilter(&quot;point&quot;)"/>
+                    </slot>
+                    <slot><text text="all"/></slot>
+                    <slot name="select.all">
+                        <checkbox value="true" script="editor_updateAllFilter()"/>
+                    </slot>
+
+                </tableContainer>
+            </slot>
+            <slot name="conSelector">
+                <containerSelector initial="pres2d">
+                    <slot hw="0.2" z="-1" name="pres2d">
+                        <lineContainer yIntent="0.01" xIntent="0.005">
+                            <line weight="50">
+                                <slot>
+                                    <text text="parent:"/>
+                                </slot>
+                                <slot name="pres2d.parent" enabled="false">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="name:"/>
+                                </slot>
+                                <slot name="pres2d.name">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="16;28;28">
+                                <slot>
+                                    <text text="pos:"/>
+                                </slot>
+                                <slot name="pres2d.pos.x">
+                                    <input>
+                                        <onlyDigits maxSize="6"/>
+                                    </input>
+                                </slot>
+                                <slot name="pres2d.pos.y">
+                                    <input>
+                                        <onlyDigits maxSize="6"/>
+                                    </input>
+                                </slot>
+                                <slot name="pres2d.pos.z">
+                                    <input>
+                                        <onlyDigits maxSize="6"/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="40;30">
+                                <slot>
+                                    <text text="scale:"/>
+                                </slot>
+                                <slot name="pres2d.scale.x">
+                                    <input>
+                                        <onlyDigits maxSize="7"/>
+                                    </input>
+                                </slot>
+                                <slot name="pres2d.scale.y">
+                                    <input>
+                                        <onlyDigits maxSize="7"/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="angle:"/>
+                                </slot>
+                                <slot name="pres2d.angle">
+                                    <input>
+                                        <onlyDigits/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="z order:"/>
+                                </slot>
+                                <slot name="pres2d.zOrder">
+                                    <input>
+                                        <onlyDigits/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="spread:"/>
+                                </slot>
+                                <slot name="pres2d.spread">
+                                    <checkbox value="false"/>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="color:"/>
+                                </slot>
+                                <slot name="pres2d.color">
+                                    <rgb>
+                                        <color hex="FFFFFF" />
+                                    </rgb>
+                                </slot>
+                            </line>
+                        </lineContainer>
+                    </slot>
+                    <slot hw="0.2" z="-1" name="pres3d">
+                        <lineContainer yIntent="0.01" xIntent="0.005">
+                            <line weight="50">
+                                <slot>
+                                    <text text="parent:"/>
+                                </slot>
+                                <slot name="pres3d.parent" enabled="false">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="16;28;28">
+                                <slot>
+                                    <text text="pos:"/>
+                                </slot>
+                                <slot name="pres3d.pos.x">
+                                    <input>
+                                        <onlyDigits maxSize="6"/>
+                                    </input>
+                                </slot>
+                                <slot name="pres3d.pos.y">
+                                    <input>
+                                        <onlyDigits maxSize="6"/>
+                                    </input>
+                                </slot>
+                                <slot name="pres3d.pos.z">
+                                    <input>
+                                        <onlyDigits maxSize="6"/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="40;30">
+                                <slot>
+                                    <text text="tex:"/>
+                                </slot>
+                                <slot name="pres3d.tex.x">
+                                    <input>
+                                        <onlyDigits maxSize="7"/>
+                                    </input>
+                                </slot>
+                                <slot name="pres3d.tex.y">
+                                    <input>
+                                        <onlyDigits maxSize="7"/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="color:"/>
+                                </slot>
+                                <slot name="pres3d.color">
+                                    <rgb>
+                                        <color hex="FFFFFF" />
+                                    </rgb>
+                                </slot>
+                            </line>
+                        </lineContainer>
+                    </slot>
+
+                    <slot hw="0.2" z="-1" name="geomChain">
+                        <lineContainer yIntent="0.01" xIntent="0.005">
+                            <line weight="50">
+                                <slot>
+                                    <text text="name:"/>
+                                </slot>
+                                <slot name="geomChain.name">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="friction:"/>
+                                </slot>
+                                <slot name="geomChain.friction">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                        </lineContainer>
+                    </slot>
+
+                    <slot hw="0.2" z="-1" name="geomObject" >
+                        <lineContainer yIntent="0.01" xIntent="0.005">
+                            <line weight="50">
+                                <slot>
+                                    <text text="name:"/>
+                                </slot>
+                                <slot name="geomObjectParent.name">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="type:"/>
+                                </slot>
+                                <slot name="geomObjectParent.type">
+                                    <ddlb text="dynamic">
+                                        <elem name="static"/>
+                                        <elem name="kinematic"/>
+                                        <elem name="dynamic"/>
+                                    </ddlb>
+                                </slot>
+                            </line>
+                            <line>
+                                <slot name="geomObjectParent.addFixture">
+                                    <button text="add fixture"/>
+                                </slot>
+                            </line>
+                        </lineContainer>
+                    </slot>
+                    <slot hw="0.2" z="-1" name="geomFixture">
+                            <lineContainer yIntent="0.01" xIntent="0.005">
+                            <line weight="50">
+                                <slot>
+                                    <text text="friction:"/>
+                                </slot>
+                                <slot name="geomFixture.friction">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="density:"/>
+                                </slot>
+                                <slot name="geomFixture.density">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line>
+                                <slot name="geomObject.addPres">
+                                    <button text="add pres"/>
+                                </slot>
+                            </line>
+                            <line>
+                                <slot name="geomFixture.category">
+                                    <ddlb text="phys">
+                                        <elem name="protagonist"/>
+                                        <elem name="enemy"/>
+                                        <elem name="decoration"/>
+                                        <elem name="phys"/>
+                                    </ddlb>
+                                </slot>
+                            </line>
+                                <line weight="50">
+                                    <slot><text text="sensor:"/></slot>
+                                    <slot name="geomFixture.sensor">
+                                        <checkbox value="false" />
+                                    </slot>
+                                </line>
+                        </lineContainer>
+                    </slot>
+                    <slot hw="0.2" z="-1" name="geomJoint">
+                        <lineContainer yIntent="0.01" xIntent="0.005">
+                            <line weight="50">
+                                <slot>
+                                    <text text="name:"/>
+                                </slot>
+                                <slot name="geomJoint.name">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="33;33">
+                                <slot>
+                                    <text text="object1:"/>
+                                </slot>
+                                <slot name="geomJoint.obj1Name">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                                <slot name="geomJoint.selectObj1">
+                                    <button text="select"/>
+                                </slot>
+                            </line>
+                            <line weight="33;33">
+                                <slot>
+                                    <text text="object2:"/>
+                                </slot>
+                                <slot name="geomJoint.obj2Name">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                                <slot name="geomJoint.selectObj2">
+                                    <button text="select"/>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="frequence:"/>
+                                </slot>
+                                <slot name="geomJoint.frequence">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="damp:"/>
+                                </slot>
+                                <slot name="geomJoint.damp">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                        </lineContainer>
+                    </slot>
+
+                    <slot hw="0.2" z="-1" name="spotLight">
+                        <lineContainer yIntent="0.01" xIntent="0.005">
+                            <line weight="50">
+                                <slot>
+                                    <text text="enabled:"/>
+                                </slot>
+                                <slot name="spotLight.enabled">
+                                    <checkbox value="true" />
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="name:"/>
+                                </slot>
+                                <slot name="spotLight.name">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="color:"/>
+                                </slot>
+                                <slot name="spotLight.color">
+                                    <rgb>
+                                        <color hex="FFFFFF"/>
+                                    </rgb>
+                                </slot>
+                            </line>
+                        </lineContainer>
+                    </slot>
+
+                    <slot hw="0.2" z="-1" name="dirLight">
+                        <lineContainer yIntent="0.01" xIntent="0.005">
+                            <line weight="50">
+                                <slot>
+                                    <text text="enabled:"/>
+                                </slot>
+                                <slot name="dirLight.enabled">
+                                    <checkbox value="true" />
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="name:"/>
+                                </slot>
+                                <slot name="dirLight.name">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="color:"/>
+                                </slot>
+                                <slot name="dirLight.color">
+                                    <rgb>
+                                        <color hex="FFFFFF"/>
+                                    </rgb>
+                                </slot>
+                            </line>
+                        </lineContainer>
+                    </slot>
+
+                    <slot hw="0.2" z="-1" name="fxObject">
+                        <lineContainer yIntent="0.01" xIntent="0.005">
+                            <line weight="50">
+                                <slot>
+                                    <text text="name:"/>
+                                </slot>
+                                <slot name="fxObject.name">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="color:"/>
+                                </slot>
+                                <slot name="fxObject.color">
+                                    <rgb>
+                                        <color hex="FFFFFF"/>
+                                    </rgb>
+                                </slot>
+                            </line>
+                            <line weight="50">
+                                <slot>
+                                    <text text="z order:"/>
+                                </slot>
+                                <slot name="fxObject.zOrder">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                        </lineContainer>
+                    </slot>
+
+                    <slot hw="0.2" z="-1" name="event">
+                        <tableContainer intent="0.01">
+                            <weight>0.5</weight>
+
+                            <slot><text text="name:"/></slot>
+                            <slot name="event.name">
+                                <input><all/></input>
+                            </slot>
+
+                            <slot><text text="onEnter:"/></slot>
+                            <slot name="event.onEnter">
+                                <input><all/></input>
+                            </slot>
+
+                            <slot><text text="onLeave:"/></slot>
+                            <slot name="event.onLeave">
+                                <input><all/></input>
+                            </slot>
+
+                            <slot><text text="infinite:"/></slot>
+                            <slot name="event.infinite">
+                                <checkbox value="false" />
+                            </slot>
+                        </tableContainer>
+                    </slot>
+
+                    <slot hw="0.2" z="-1" name="point">
+                        <lineContainer yIntent="0.01" xIntent="0.005">
+                            <line weight="50">
+                                <slot>
+                                    <text text="name:"/>
+                                </slot>
+                                <slot name="point.name">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                        </lineContainer>
+                    </slot>
+
+                    <slot hw="0.2" z="-1" name="enemy">
+                        <lineContainer yIntent="0.01" xIntent="0.005">
+                            <line weight="50">
+                                <slot>
+                                    <text text="name:"/>
+                                </slot>
+                                <slot name="enemy.name">
+                                    <input>
+                                        <all/>
+                                    </input>
+                                </slot>
+                            </line>
+                        </lineContainer>
+                    </slot>
+                </containerSelector>
+            </slot>
+
+        </tableContainer>
+    </slot>
+    <!--  -->
+
+    <slot name="editor_context_menu" visible="false">
+        <context>
+            <elem name="geometry">
+                <elem name="chain"/>
+                <elem name="3d box"/>
+                <elem name="box" />
+                <elem name="joint" />
+                <!--	<elem name="ground" />-->
+            </elem>
+            <elem name="fx">
+                <elem name="rain"/>
+                <elem name="splash"/>
+                <elem name="fire"/>
+                <elem name="lightning"/>
+                <elem name="steam"/>
+                <elem name="explosion"/>
+            </elem>
+            <elem name="light">
+                <elem name="spot"/>
+                <elem name="directional"/>
+            </elem>
+            <elem name="present" />
+            <elem name="event" />
+            <elem name="add enemy" />
+            <elem name="add point" />
+        </context>
+    </slot>
+    <slot name="pres_con_menu" visible="false">
+        <context>
+            <elem name="remove"/>
+        </context>
+    </slot>
+    <slot name="geom_con_menu" visible="false">
+        <context>
+            <elem name="add pres"/>
+            <elem name="remove"/>
+        </context>
+    </slot>
+    <slot name="image_dialog" hw="0.42" hh="0.55" visible="false">
+        <dialog capture="Select Image">
+            <slot name="image_picker" y="0.05" hw="0.4" hh="0.5" z="0.1">
+                <imagePicker/>
+            </slot>
+            <slot y="-0.50" z="0.1" name="image_picker.select">
+                <button text="ok"/>
+            </slot>
+        </dialog>
+    </slot>
+
+    <slot name="light_dialog" hw="0.5" hh="0.5" visible="false" z="-1">
+        <dialog capture="Select weather">
+            <slot hw="0.4" hh="0.4" y="-0.1" z="-0.2">
+                <tableContainer intent="0.03">
+                    <slot hw="0.4" z="-0.1">
+                        <tableContainer intent="0.01">
+                            <weight>0.5</weight>
+                            <slot>
+                                <text text="night"/>
+                            </slot>
+                            <slot>
+                                <text text="day"/>
+                            </slot>
+                            <slot name="night_color">
+                                <rgb>
+                                    <color hex="000000"/>
+                                </rgb>
+                            </slot>
+                            <slot name="day_color">
+                                <rgb>
+                                    <color hex="FFFFFF"/>
+                                </rgb>
+                            </slot>
+                        </tableContainer>
+                    </slot>
+                    <slot name="dayTime" z="0" hw="0.2">
+                        <slider min="0.0" max="1.0" value="1.0"/>
+                    </slot>
+                    <slot hw="0.2" z="-0.1">
+                        <tableContainer intent="0.01">
+                            <weight>0.5</weight>
+                            <slot>
+                                <text text="thunder"/>
+                            </slot>
+                            <slot name="thunder">
+                                <checkbox value="false"/>
+                            </slot>
+                        </tableContainer>
+                    </slot>
+                </tableContainer>
+            </slot>
+        </dialog>
+    </slot>
+
+    <slot name="settings_dialog" hw="0.5" hh="0.5" visible="false" z="-1">
+        <dialog capture="Level settings">
+            <slot hw="0.4" hh="0.4" y="-0.1" z="-0.2">
+                <tableContainer intent="0.03">
+                    <slot hw="0.4" z="-0.1">
+                        <tableContainer intent="0.01">
+                            <weight>0.5</weight>
+                            <slot>
+                                <text text="script file:"/>
+                            </slot>
+                            <slot name="script_file">
+                                <input>
+                                    <all/>
+                                </input>
+                            </slot>
+                            <slot>
+                                <text text="start event:"/>
+                            </slot>
+                            <slot name="start_event">
+                                <input>
+                                    <all/>
+                                </input>
+                            </slot>
+                        </tableContainer>
+                    </slot>
+                </tableContainer>
+            </slot>
+        </dialog>
+    </slot>
+
+</userInterface>

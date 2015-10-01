@@ -1,0 +1,675 @@
+<world>
+	<resources>
+		<sprite name="wall_d" file="textures/wall_d.png" w="-1" h="-1" top="-1" left="-1" right="-1" bottom="-1"/>
+		<sprite name="wall" file="textures/wall.png" w="-1" h="-1" top="-1" left="-1" right="-1" bottom="-1"/>
+		<sprite name="back" file="textures/back.png" w="-1" h="-1" top="-1" left="-1" right="-1" bottom="-1"/>
+	</resources>
+	<levelSettings scriptName="level1.lua" startEvent="onStart"/>
+	<camera>
+		<initPos x="-7.99431" y="5.02596" z="3"/>
+		<constraints left="-40" right="40" top="40" bottom="-40"/>
+	</camera>
+	<points x="-9.51018" y="4.45129" name="begin"/>
+	<points x="-10.153" y="-1.85628" name="spawnPnt1"/>
+	<points x="-10.121" y="-3.50572" name="clPnt1"/>
+	<points x="6.62718" y="-2.70195" name="a_spawn"/>
+	<points x="22.4014" y="-0.757401" name="stEx"/>
+	<layer z="0" name="main">
+		<art zOrder="-10" rotation="0" name="">
+			<image name="back"/>
+			<scale x="0.02547" y="0.02128"/>
+			<repeat x="23.0476" y="10.811"/>
+			<pos x="7.79018" y="-6.73072" z="0"/>
+			<color r="0.66" g="0.82" b="1" a="0.79" hex=""/>
+		</art>
+		<art zOrder="0" rotation="0" name="">
+			<image name="back"/>
+			<scale x="0.0187803" y="0.00320331"/>
+			<pos x="-9.62194" y="1.70675" z="0"/>
+			<color r="1" g="1" b="1" a="1" hex=""/>
+		</art>
+		<art zOrder="0" rotation="0" name="">
+			<image name="back"/>
+			<scale x="0.0187803" y="0.00323543"/>
+			<pos x="-5.12467" y="1.71104" z="0"/>
+			<color r="1" g="1" b="1" a="1" hex=""/>
+		</art>
+		<art zOrder="0" rotation="0" name="button1">
+			<image name="back"/>
+			<scale x="0.00328" y="0.00297"/>
+			<pos x="-7.00302" y="-4.15841" z="0"/>
+			<color r="1" g="1" b="1" a="1" hex=""/>
+		</art>
+		<objs3d>
+			<box3D texture="back" name="">
+				<pos x="-11.33" y="-1.386" z="0"/>
+				<size x="7.94541" y="0.49845" z="0.2"/>
+				<tex x="12" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="37.9791" y="-18.9323" z="0"/>
+				<size x="5.12045" y="0.5" z="0.5"/>
+				<tex x="1" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="19.0115" y="-4.73736" z="0"/>
+				<size x="1" y="0.441897" z="0.2"/>
+				<tex x="1" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="-3.89984" y="6.46325" z="0"/>
+				<size x="8.06059" y="0.5" z="0.2"/>
+				<tex x="6" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="4.7419" y="2.94" z="0"/>
+				<size x="0.57678" y="4.01016" z="0.2"/>
+				<tex x="1" y="6"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="1.4502" y="-1.40674" z="0"/>
+				<size x="3.12753" y="0.547938" z="0.2"/>
+				<tex x="6" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="29.4869" y="-5.146" z="0"/>
+				<size x="7.65954" y="0.439229" z="0.2"/>
+				<tex x="12" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="-12.53" y="4.4767" z="0"/>
+				<size x="0.57678" y="2.4715" z="0.2"/>
+				<tex x="1" y="4"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="-26.7324" y="-3.48271" z="0"/>
+				<size x="0.57678" y="2.4715" z="0.2"/>
+				<tex x="1" y="4"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="-8.01922" y="-5.39846" z="0"/>
+				<size x="18.1279" y="0.466695" z="0.2"/>
+				<tex x="16" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="13.8086" y="-0.624413" z="0"/>
+				<size x="8.56479" y="0.441897" z="0.2"/>
+				<tex x="10" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="16.0712" y="-5.85155" z="0"/>
+				<size x="1" y="0.429967" z="0.2"/>
+				<tex x="1" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="-8.936" y="2.5352" z="0"/>
+				<size x="10.3898" y="0.5" z="0.2"/>
+				<tex x="14" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="12.6851" y="-5.00976" z="0"/>
+				<size x="1" y="0.5" z="0.2"/>
+				<tex x="1" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="scaner">
+				<pos x="-3.587" y="-3.381" z="0"/>
+				<size x="0.216218" y="1.52193" z="0.2"/>
+				<tex x="1" y="1"/>
+				<color r="0" g="1" b="0" a="0.79" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="43.848" y="-11.61" z="0"/>
+				<size x="0.8379" y="6.85905" z="0.5"/>
+				<tex x="2" y="10"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="4.15344" y="2.55198" z="0"/>
+				<size x="1" y="0.5" z="0.2"/>
+				<tex x="1" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+			<box3D texture="back" name="">
+				<pos x="-26.7357" y="-1.43284" z="0"/>
+				<size x="2.83675" y="0.5" z="0.2"/>
+				<tex x="4" y="1"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</box3D>
+		</objs3d>
+		<geometry>
+			<slot name="door1" physType="1" x="-5.61745" y="-4.05006">
+				<box x="-0.00477123" y="-0.0157576" hw="0.168191" hh="0.826697" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.00255" y="0.0128"/>
+						<pos x="0.0272217" y="-0.0071826" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="fl8" physType="2" x="35.1172" y="-0.0818093">
+				<box x="0" y="0" hw="1" hh="1" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0155539" y="0.0153741"/>
+						<pos x="-0.0111885" y="0.00553316" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="fl6" physType="2" x="31.0598" y="-0.0809915">
+				<box x="0" y="0" hw="1" hh="1" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0153463" y="0.0157891"/>
+						<pos x="-0.0134296" y="0.00855255" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="stst" physType="2" x="0" y="0">
+				<chain friction="1" category="phys">
+					<point x="18.0714" y="-5.11759"/>
+					<point x="17.9634" y="-4.26554"/>
+					<point x="20.0317" y="-4.27008"/>
+					<point x="20.0172" y="-5.17549"/>
+				</chain>
+			</slot>
+			<slot name="" physType="2" x="0" y="0">
+				<chain friction="1" category="phys">
+					<point x="21.7815" y="-5.52565"/>
+					<point x="21.835" y="-4.6655"/>
+					<point x="37.1304" y="-4.72828"/>
+					<point x="37.1426" y="-5.59685"/>
+				</chain>
+			</slot>
+			<slot name="floor" physType="2" x="0" y="0">
+				<chain friction="1" category="phys">
+					<point x="-11.9655" y="5.97446"/>
+					<point x="-11.975" y="3.04671"/>
+					<point x="1.45618" y="3.04686"/>
+					<point x="1.47201" y="2.1476"/>
+					<point x="-13.015" y="2.08468"/>
+				</chain>
+			</slot>
+			<slot name="" physType="2" x="0" y="0">
+				<chain friction="1" category="phys">
+					<point x="4.09167" y="2.14843"/>
+					<point x="4.09712" y="-0.819793"/>
+					<point x="-1.69955" y="-0.830233"/>
+					<point x="-1.67731" y="-2.002"/>
+				</chain>
+			</slot>
+			<slot name="fl4" physType="2" x="27.7887" y="-0.616079">
+				<box x="-0.0417728" y="0.0209476" hw="0.572318" hh="0.469753" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.00901519" y="0.00775274"/>
+						<pos x="-0.00212097" y="0.0119164" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="" physType="0" x="-7.79715" y="-3.70208">
+				<box x="0.0145245" y="0.0635409" hw="0.40076" hh="0.960368" friction="1" density="1" sensor="1" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.00616" y="0.01514"/>
+						<pos x="0.0196223" y="0.00153923" z="0"/>
+						<color r="1" g="0" b="0" a="0.68" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="ff3" physType="2" x="41.2284" y="-0.0276921">
+				<box x="0" y="0" hw="1" hh="1" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0158652" y="0.0158935"/>
+						<pos x="-0.00466919" y="0.00200748" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="ff1" physType="2" x="37.1893" y="-0.0839382">
+				<box x="0" y="0" hw="1" hh="1" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0158648" y="0.0158933"/>
+						<pos x="-0.00392151" y="-0.00179005" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="" physType="2" x="0" y="0">
+				<chain friction="1" category="phys">
+					<point x="-24.2537" y="-0.931881"/>
+					<point x="-24.2505" y="-1.89338"/>
+					<point x="-26.2004" y="-1.91741"/>
+					<point x="-26.1499" y="-4.85257"/>
+					<point x="-5.10379" y="-4.85252"/>
+					<point x="10.0601" y="-4.88093"/>
+					<point x="10.1015" y="-6.03528"/>
+				</chain>
+			</slot>
+			<slot name="" physType="2" x="-11.3236" y="-0.305321">
+				<box x="0" y="0" hw="0.585605" hh="0.459162" friction="5" density="2" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.00926274" y="0.00716004"/>
+						<pos x="0" y="0.00865483" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="ff2" physType="2" x="39.1949" y="-0.0271022">
+				<box x="0" y="0" hw="1" hh="1" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0158657" y="0.015893"/>
+						<pos x="0.0066452" y="-0.0112789" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="" physType="2" x="0" y="0">
+				<chain friction="1" category="phys">
+					<point x="-29.591" y="0.521364"/>
+					<point x="-29.5069" y="-0.948393"/>
+					<point x="-24.3427" y="-0.927807"/>
+				</chain>
+			</slot>
+			<slot name="" physType="2" x="-10.0863" y="0.835469">
+				<box x="0" y="0" hw="0.585605" hh="0.459162" friction="5" density="2" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.00926" y="0.00716"/>
+						<pos x="-0.00370026" y="0.011131" z="0"/>
+						<color r="0.35" g="0.59" b="0.42" a="0.65" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="" physType="2" x="0" y="0">
+				<chain friction="1" category="phys">
+					<point x="3.205" y="2.20524"/>
+					<point x="3.18916" y="3.00682"/>
+					<point x="4.14918" y="3.00439"/>
+					<point x="4.15373" y="5.97666"/>
+				</chain>
+			</slot>
+			<slot name="" physType="2" x="0" y="0">
+				<chain friction="1" category="phys">
+					<point x="11.7377" y="-4.52552"/>
+					<point x="13.6595" y="-4.52212"/>
+				</chain>
+			</slot>
+			<slot name="papa" physType="2" x="-7.37101" y="1.71118">
+				<box x="0" y="0" hw="1.03383" hh="0.197006" friction="1" density="1" sensor="0" category="decoration">
+					<art zOrder="0" rotation="0" name="back">
+						<image name="back"/>
+						<scale x="0.0160367" y="0.00298271"/>
+						<repeat x="1" y="0.990808"/>
+						<pos x="0.027276" y="0.00603056" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="" physType="2" x="-10.034" y="-0.322619">
+				<box x="0" y="0" hw="0.585605" hh="0.459162" friction="5" density="2" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.00926274" y="0.00716004"/>
+						<pos x="-0.00813675" y="0.00865483" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="" physType="2" x="0" y="0">
+				<chain friction="1" category="phys">
+					<point x="43.1198" y="-4.79246"/>
+					<point x="43.0906" y="-13.1661"/>
+				</chain>
+			</slot>
+			<slot name="" physType="2" x="0" y="0">
+				<chain friction="1" category="phys">
+					<point x="15.1594" y="-5.48091"/>
+					<point x="17.0943" y="-5.47509"/>
+				</chain>
+			</slot>
+			<slot name="fe1" physType="2" x="38.4735" y="-5.2286">
+				<box x="-0.233738" y="-0.0216203" hw="1.03103" hh="0.478135" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0167998" y="0.00746952"/>
+						<pos x="-0.0230103" y="0.0366802" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+				<box x="1.76839" y="-0.0656109" hw="0.943909" hh="0.517649" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0150349" y="0.00840814"/>
+						<pos x="0.0191956" y="-0.0131283" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+				<box x="3.69136" y="-0.0548477" hw="0.936203" hh="0.497523" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0147231" y="0.00769633"/>
+						<pos x="0.0144005" y="-0.00743103" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="fl1" physType="2" x="23.6638" y="-0.739898">
+				<box x="-0.422207" y="0.128953" hw="0.924899" hh="0.452728" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0138703" y="0.00737482"/>
+						<pos x="0.0087719" y="-0.0313378" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="fl2" physType="2" x="25.1653" y="-0.622875">
+				<box x="-0.0482311" y="0.00874662" hw="0.927791" hh="0.456891" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0139455" y="0.00727076"/>
+						<pos x="-0.0373707" y="0.00764084" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="fl3" physType="2" x="26.5263" y="-0.61455">
+				<box x="0.10013" y="-0.00155127" hw="0.570054" hh="0.459639" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.00927859" y="0.00756689"/>
+						<pos x="-0.0130863" y="-0.000365257" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="fl5" physType="2" x="29.3493" y="-0.621442">
+				<box x="-0.14159" y="0.0268242" hw="0.832911" hh="0.487258" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0132898" y="0.00768664"/>
+						<pos x="-0.00504875" y="0.0076859" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="fl7" physType="2" x="33.1018" y="-0.076476">
+				<box x="-0.0626259" y="-0.00927979" hw="1" hh="1" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0153468" y="0.0152698"/>
+						<pos x="0.0151215" y="0.0284873" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="" physType="2" x="0" y="0">
+				<chain friction="1" category="phys">
+					<point x="32.9099" y="-18.4091"/>
+					<point x="43.0676" y="-18.4628"/>
+				</chain>
+			</slot>
+			<slot name="fp" physType="2" x="-21.3666" y="-1.29963">
+				<box x="-1.95203" y="0.0513574" hw="0.582904" hh="0.351492" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.00916986" y="0.00547858"/>
+						<repeat x="1.00187" y="1"/>
+						<pos x="0.0136719" y="-0.0157442" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+				<box x="1.70148" y="0.0596641" hw="0.732072" hh="0.351492" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0116498" y="0.00554466"/>
+						<pos x="0.00743103" y="-3.99351e-05" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+				<box x="-0.777201" y="0.0599819" hw="0.58755" hh="0.351492" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.0116498" y="0.00554466"/>
+						<pos x="0.146065" y="-0.000401378" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+				<box x="0.385584" y="0.0652291" hw="0.575694" hh="0.351492" friction="1" density="1" sensor="0" category="phys">
+					<art zOrder="0" rotation="0" name="">
+						<image name="back"/>
+						<scale x="0.00916986" y="0.00547858"/>
+						<pos x="0.00536919" y="-0.0155181" z="0"/>
+						<color r="1" g="1" b="1" a="1" hex=""/>
+					</art>
+				</box>
+			</slot>
+			<slot name="" physType="2" x="0" y="0">
+				<chain friction="1" category="phys">
+					<point x="-3.41752" y="-0.855307"/>
+					<point x="-18.9149" y="-0.899802"/>
+					<point x="-18.9107" y="-1.8787"/>
+				</chain>
+			</slot>
+			<join name="flst12" obj1Name="fl7" obj2Name="stst" frequence="1" damp="1">
+				<offset1 x="0.542095" y="-0.250501" z="0"/>
+				<offset2 x="33.9061" y="1.27347" z="0"/>
+			</join>
+			<join name="fff2" obj1Name="stst" obj2Name="fe1" frequence="0" damp="1">
+				<offset1 x="42.5929" y="-5.09903" z="0"/>
+				<offset2 x="4.44692" y="1.19277" z="0"/>
+			</join>
+			<join name="flst1" obj1Name="fl1" obj2Name="stst" frequence="0" damp="1">
+				<offset1 x="-0.884455" y="0.0948124" z="0"/>
+				<offset2 x="22.4873" y="0.139841" z="0"/>
+			</join>
+			<join name="flst11" obj1Name="fl7" obj2Name="stst" frequence="1" damp="1">
+				<offset1 x="-0.616318" y="-0.350821" z="0"/>
+				<offset2 x="32.1407" y="1.28178" z="0"/>
+			</join>
+			<join name="flst8" obj1Name="fl5" obj2Name="stst" frequence="0" damp="1">
+				<offset1 x="0.342594" y="-0.019184" z="0"/>
+				<offset2 x="29.9027" y="0.272616" z="0"/>
+			</join>
+			<join name="flst9" obj1Name="fl6" obj2Name="stst" frequence="1" damp="1">
+				<offset1 x="-0.42136" y="-0.18711" z="0"/>
+				<offset2 x="30.2274" y="1.25432" z="0"/>
+			</join>
+			<join name="fff1" obj1Name="stst" obj2Name="fe1" frequence="0" damp="1">
+				<offset1 x="36.9516" y="-4.21171" z="0"/>
+				<offset2 x="-0.924458" y="0.0738711" z="0"/>
+			</join>
+			<join name="flst13" obj1Name="fl8" obj2Name="stst" frequence="1" damp="1">
+				<offset1 x="-0.544697" y="-0.242047" z="0"/>
+				<offset2 x="34.4898" y="1.28206" z="0"/>
+			</join>
+			<join name="fp_jl" obj1Name="floor" obj2Name="fp" frequence="0" damp="1">
+				<offset1 x="-23.6577" y="-0.630152" z="0"/>
+				<offset2 x="-2.28871" y="0.101133" z="0"/>
+			</join>
+			<join name="flst4" obj1Name="fl2" obj2Name="stst" frequence="0" damp="1">
+				<offset1 x="0.388994" y="0.0768198" z="0"/>
+				<offset2 x="25.7718" y="0.185001" z="0"/>
+			</join>
+			<join name="jj1" obj1Name="ff1" obj2Name="stst" frequence="1" damp="1">
+				<offset1 x="0.00440216" y="-0.0526284" z="0"/>
+				<offset2 x="37.216" y="1.43248" z="0"/>
+			</join>
+			<join name="flst2" obj1Name="fl1" obj2Name="stst" frequence="0" damp="1">
+				<offset1 x="0.123924" y="0.209304" z="0"/>
+				<offset2 x="24.08" y="0.125817" z="0"/>
+			</join>
+			<join name="flst6" obj1Name="fl4" obj2Name="stst" frequence="0" damp="1">
+				<offset1 x="-0.245024" y="0.00849152" z="0"/>
+				<offset2 x="27.563" y="0.264781" z="0"/>
+			</join>
+			<join name="jj3" obj1Name="ff3" obj2Name="stst" frequence="1" damp="1">
+				<offset1 x="0.00481033" y="0.0204263" z="0"/>
+				<offset2 x="41.2746" y="1.38515" z="0"/>
+			</join>
+			<join name="jj2" obj1Name="ff2" obj2Name="stst" frequence="1" damp="1">
+				<offset1 x="-0.0134926" y="-0.00347281" z="0"/>
+				<offset2 x="39.2059" y="1.31611" z="0"/>
+			</join>
+			<join name="barJoint2" obj1Name="papa" obj2Name="floor" frequence="0" damp="1">
+				<offset1 x="-1.00564" y="-0.148996" z="0"/>
+				<offset2 x="-8.46987" y="1.55927" z="0"/>
+			</join>
+			<join name="barJoint" obj1Name="floor" obj2Name="papa" frequence="0" damp="1">
+				<offset1 x="-6.27485" y="1.57886" z="0"/>
+				<offset2 x="0.971846" y="-0.138177" z="0"/>
+			</join>
+			<join name="flst3" obj1Name="fl2" obj2Name="stst" frequence="0" damp="1">
+				<offset1 x="-0.466471" y="0.112556" z="0"/>
+				<offset2 x="24.4717" y="0.23919" z="0"/>
+			</join>
+			<join name="flst5" obj1Name="fl3" obj2Name="stst" frequence="0" damp="1">
+				<offset1 x="0.162895" y="0.0642505" z="0"/>
+				<offset2 x="26.6803" y="0.0480386" z="0"/>
+			</join>
+			<join name="flst7" obj1Name="fl5" obj2Name="stst" frequence="0" damp="1">
+				<offset1 x="-0.438774" y="9.64403e-05" z="0"/>
+				<offset2 x="28.6084" y="0.183179" z="0"/>
+			</join>
+			<join name="flst14" obj1Name="fl8" obj2Name="stst" frequence="1" damp="1">
+				<offset1 x="0.511574" y="-0.284836" z="0"/>
+				<offset2 x="35.8193" y="1.2954" z="0"/>
+			</join>
+			<join name="flst10" obj1Name="fl6" obj2Name="stst" frequence="1" damp="1">
+				<offset1 x="0.333496" y="-0.157317" z="0"/>
+				<offset2 x="31.6606" y="1.28591" z="0"/>
+			</join>
+			<join name="fp_jr" obj1Name="fp" obj2Name="floor" frequence="0" damp="1">
+				<offset1 x="2.18285" y="0.14129" z="0"/>
+				<offset2 x="-19.1855" y="-0.691983" z="0"/>
+			</join>
+		</geometry>
+		<fxes>
+			<fx name="steam2" effect="steam" hw="0.240424" hh="0.96734" x="-17.3698" y="2.97088" zOrder="0">
+				<dir x="0.00462151" y="-1.21162"/>
+				<color r="1" g="0.38" b="0.1" a="1" hex=""/>
+			</fx>
+			<fx name="lightning" effect="lightning" hw="0.882024" hh="0.497693" x="-2.55371" y="-1.37335" zOrder="0">
+				<dir x="1.46626" y="-1.03692"/>
+				<color r="1" g="1" b="1" a="1" hex=""/>
+			</fx>
+			<fx name="steam1" effect="steam" hw="0.240424" hh="0.96734" x="-15.3065" y="0.15259" zOrder="0">
+				<dir x="-0.0046854" y="1.32723"/>
+				<color r="1" g="0.38" b="0.1" a="1" hex=""/>
+			</fx>
+			<fx name="f1" effect="fire" hw="0.379634" hh="1" x="3.33526" y="4.12976" zOrder="1">
+				<dir x="-0.0496531" y="1.23631"/>
+				<color r="1" g="1" b="0.99" a="1" hex=""/>
+			</fx>
+		</fxes>
+		<light>
+			<light name="bl_light" r="1" g="1" b="1" a="1" enable="1">
+				<directional>
+					<lt x="-18.6674" y="-1.97358" z="0"/>
+					<rt x="-15.2833" y="-4.86855" z="0"/>
+					<lb x="-19.8198" y="-4.86269" z="0"/>
+					<rb x="-16.1898" y="-1.97483" z="0"/>
+				</directional>
+			</light>
+			<light name="" r="1" g="1" b="1" a="1" enable="1">
+				<directional>
+					<lt x="-14.8811" y="-2.00571" z="0"/>
+					<rt x="-11.445" y="-4.87672" z="0"/>
+					<lb x="-16.2033" y="-4.87606" z="0"/>
+					<rb x="-13.0082" y="-1.98588" z="0"/>
+				</directional>
+			</light>
+			<light name="" r="1" g="1" b="1" a="1" enable="1">
+				<directional>
+					<lt x="-26.2019" y="-1.9041" z="0"/>
+					<rt x="-22.9654" y="-4.91412" z="0"/>
+					<lb x="-26.1755" y="-4.93006" z="0"/>
+					<rb x="-23.9017" y="-1.88498" z="0"/>
+				</directional>
+			</light>
+			<light name="l1_alert" r="1" g="1" b="1" a="0.94" enable="1">
+				<directional>
+					<lt x="1.2119" y="-1.89395" z="0"/>
+					<rt x="-1.61942" y="-4.86643" z="0"/>
+					<lb x="2.61145" y="-4.88126" z="0"/>
+					<rb x="-0.613734" y="-1.94563" z="0"/>
+				</directional>
+			</light>
+			<light name="l2_alert" r="1" g="1" b="1" a="1" enable="1">
+				<directional>
+					<lt x="2.98237" y="-1.97467" z="0"/>
+					<rt x="6.02152" y="-4.94357" z="0"/>
+					<lb x="1.93048" y="-4.91766" z="0"/>
+					<rb x="4.63569" y="-1.97894" z="0"/>
+				</directional>
+			</light>
+		</light>
+	</layer>
+	<weather daytime="0.92" thunder="0">
+		<dayLight x="1" y="1" z="1"/>
+		<nightLight x="0" y="0" z="0"/>
+	</weather>
+	<event name="" onEnter="shake1" onLeave="" infinite="0">
+		<pos x="-5.00909" y="-0.257577"/>
+		<size x="0.709249" y="0.5"/>
+	</event>
+	<event name="e.s2" onEnter="begDmg" onLeave="endDmg" infinite="0">
+		<pos x="-17.3674" y="0.842848"/>
+		<size x="0.248048" y="1.22211"/>
+	</event>
+	<event name="e.s1" onEnter="begDmg" onLeave="endDmg" infinite="0">
+		<pos x="-15.2711" y="0.455004"/>
+		<size x="0.248048" y="1.27054"/>
+	</event>
+	<event name="" onEnter="breakf" onLeave="" infinite="0">
+		<pos x="-21.5699" y="-0.114118"/>
+		<size x="0.252249" y="0.616905"/>
+	</event>
+	<event name="" onEnter="spFistE" onLeave="" infinite="0">
+		<pos x="-17.8932" y="-3.94286"/>
+		<size x="0.408327" y="0.877335"/>
+	</event>
+	<event name="" onEnter="alarm" onLeave="" infinite="0">
+		<pos x="-3.52849" y="-3.43999"/>
+		<size x="0.258554" y="1.21524"/>
+	</event>
+	<event name="" onEnter="shakeCam" onLeave="" infinite="0">
+		<pos x="16.0892" y="-5.06259"/>
+		<size x="0.5" y="0.690167"/>
+	</event>
+	<event name="" onEnter="spawnEx" onLeave="" infinite="0">
+		<pos x="26.6364" y="-3.42686"/>
+		<size x="0.5" y="1.35434"/>
+	</event>
+	<event name="" onEnter="endExp" onLeave="" infinite="0">
+		<pos x="40.1998" y="-2.91119"/>
+		<size x="0.5" y="1.34126"/>
+	</event>
+	<event name="" onEnter="endLvl" onLeave="" infinite="0">
+		<pos x="39.3582" y="-16.8715"/>
+		<size x="1.82949" y="0.270693"/>
+	</event>
+</world>
+

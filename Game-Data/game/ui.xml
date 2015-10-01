@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<userInterface xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="http://localhost/schema/user_interface.xsd" 
+scriptsFile="levels/level1.lua"
+lookAndFeel="ui/laf.xml" >
+
+    <slot x="-0.9" y="0.9">
+        <button text="reload" script="game_loadState(&quot;level1&quot;)" />
+    </slot>
+
+    <slot x="0" y="0.5" name="interactive" visible="false">
+        <text text="interact" />
+    </slot>
+
+    <slot x="-0.73" y="0.8" name="health_bar" hw="0.2">
+        <healthbar min="0" max="100" value="100">
+            <color hex="C00000" />
+        </healthbar>
+    </slot>
+
+    <slot x="0.73" y="0.8" name="enemy_bar" hw="0.2">
+        <healthbar min="0" max="100" value="100">
+            <color hex="0000C0" />
+        </healthbar>
+    </slot>
+
+
+</userInterface>

@@ -1,0 +1,23 @@
+<texture file="zombie.png">
+    <sprite name="zombie.zhead" w="116" h="124" >
+        <frame x1="0" y1="0" x2="116" y2="124" />
+    </sprite>
+    <sprite name="zombie.ztorso" w="77" h="85" >
+        <frame x1="117" y1="0" x2="194" y2="85" />
+    </sprite>
+    <sprite name="zombie.zright-hand" w="56" h="58" >
+        <frame x1="195" y1="0" x2="251" y2="58" />
+    </sprite>
+    <sprite name="zombie.zright-foot" w="66" h="56" >
+        <frame x1="189" y1="86" x2="255" y2="142" />
+    </sprite>
+    <sprite name="zombie.zleft-hand" w="52" h="53" >
+        <frame x1="136" y1="86" x2="188" y2="139" />
+    </sprite>
+    <sprite name="zombie.zleft-foot" w="80" h="47" >
+        <frame x1="0" y1="125" x2="80" y2="172" />
+    </sprite>
+    <sprite name="zombie.zhair-1" w="82" h="39" >
+        <frame x1="81" y1="140" x2="163" y2="179" />
+    </sprite>
+</texture>

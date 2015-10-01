@@ -1,0 +1,55 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:include schemaLocation="../../Core/schemas/common.xsd"/>
+
+    <xs:element name="savedData" type="ChedSavedData" />
+
+    <xs:complexType name="WindowPropsType">
+        <xs:sequence>
+            <xs:element name="pos" type="Point2D"/>
+        </xs:sequence>
+        <xs:attribute name="name" />
+        <xs:attribute name="minimalized" type="xs:boolean" default="false" />
+        <xs:attribute name="visible" type="xs:boolean" default="true" />
+    </xs:complexType>
+
+    <xs:complexType name="ChedSavedData">
+        <xs:sequence>
+            <xs:element name="timeLine" type="TimeLineType" />
+            <xs:element name="properties" type="SavedPropertiesType" />
+            <xs:element name="draw" type="SavedDrawType" />
+            <xs:element name="camera" type="Point3D" />
+
+            <xs:element name="windows" type="WindowPropsType" minOccurs="0" maxOccurs="unbounded" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="TimeLineType">
+        <xs:sequence>
+            <xs:element name="startX" type="xs:float" />
+            <xs:element name="endX" type="xs:float" />
+            <xs:element name="divStep" type="xs:int" />
+            <xs:element name="markFreq" type="xs:int" />
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PropEntityStateType">
+        <xs:attribute name="drawable" type="xs:boolean" />
+        <xs:attribute name="selectable" type="xs:boolean" />
+    </xs:complexType>
+
+    <xs:complexType name="SavedPropertiesType">
+        <xs:attribute name="animation" />
+        <xs:attribute name="workTarget" />
+    </xs:complexType>
+
+
+    <xs:complexType name="SavedDrawType">
+        <xs:sequence>
+            <xs:element name="bonesState" type="PropEntityStateType" />
+            <xs:element name="picsState" type="PropEntityStateType" />
+            <xs:element name="physState" type="PropEntityStateType" />
+        </xs:sequence>
+    </xs:complexType>
+
+</xs:schema>

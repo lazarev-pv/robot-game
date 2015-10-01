@@ -1,0 +1,56 @@
+<texture file="char.png">
+    <sprite name="char.head" w="271" h="298">
+        <frame x1="0" y1="0" x2="270" y2="297" />
+    </sprite>
+    <sprite name="char.gun" w="210" h="203">
+        <frame x1="272" y1="0" x2="481" y2="202" />
+    </sprite>
+    <sprite name="char.front_shin" w="82" h="184">
+        <frame x1="483" y1="0" x2="564" y2="183" />
+    </sprite>
+    <sprite name="char.torso" w="98" h="180">
+        <frame x1="566" y1="0" x2="663" y2="179" />
+    </sprite>
+    <sprite name="char.rear_shin" w="75" h="178">
+        <frame x1="665" y1="0" x2="739" y2="177" />
+    </sprite>
+    <sprite name="char.goggles" w="261" h="166">
+        <frame x1="741" y1="0" x2="1001" y2="165" />
+    </sprite>
+    <sprite name="char.front_thigh" w="48" h="112">
+        <frame x1="975" y1="167" x2="1022" y2="278" />
+    </sprite>
+    <sprite name="char.rear_thigh" w="65" h="104">
+        <frame x1="909" y1="167" x2="973" y2="270" />
+    </sprite>
+    <sprite name="char.front_upper_arm" w="54" h="97">
+        <frame x1="854" y1="167" x2="907" y2="263" />
+    </sprite>
+    <sprite name="char.eye_indifferent" w="93" h="89">
+        <frame x1="760" y1="167" x2="852" y2="255" />
+    </sprite>
+    <sprite name="char.rear_upper_arm" w="47" h="87">
+        <frame x1="712" y1="179" x2="758" y2="265" />
+    </sprite>
+    <sprite name="char.front_fist_closed" w="75" h="82">
+        <frame x1="636" y1="181" x2="710" y2="262" />
+    </sprite>
+    <sprite name="char.front_bracer" w="58" h="80">
+        <frame x1="577" y1="181" x2="634" y2="260" />
+    </sprite>
+    <sprite name="char.rear_bracer" w="56" h="72">
+        <frame x1="520" y1="185" x2="575" y2="256" />
+    </sprite>
+    <sprite name="char.front_foot" w="126" h="69">
+        <frame x1="393" y1="204" x2="518" y2="272" />
+    </sprite>
+    <sprite name="char.rear_foot" w="113" h="60">
+        <frame x1="279" y1="204" x2="391" y2="263" />
+    </sprite>
+    <sprite name="char.mouth_smile" w="93" h="59">
+        <frame x1="760" y1="257" x2="852" y2="315" />
+    </sprite>
+    <sprite name="char.neck" w="36" h="41">
+        <frame x1="520" y1="258" x2="555" y2="298" />
+    </sprite>
+</texture>

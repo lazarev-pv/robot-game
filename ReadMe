@@ -1,0 +1,45 @@
+Open source demo version
+
+Required Instruments for compilation on ubuntu
+    gcc, make, cmake 
+Depends on followinng libraries 
+    png
+    opengl   
+    freeglut
+    freetype
+    box2d
+    sfml
+    lua
+    glm
+    rapidxml
+
+First Compilation manual for ubuntu users
+1) download rapidxml headers from http://sourceforge.net/projects/rapidxml/files/latest/download
+    and install it to /usr/include/rapid
+2) install dependencies
+    sudo apt-get install  \
+        libpng++-dev \
+        freeglut3-dev \
+        libxmu-dev \
+        libxi-dev \
+        libsfml-dev \ 
+        libbox2d-dev \
+        libfreetype6-dev \ 
+        liblua5.2-dev \
+        libglm-dev 
+3) git clone https://github.com/lazarev-pv/robot-game.git
+4) cd robot-game; mkdir Build; cd Build
+5) cmake ../
+6) make
+Result (all executables need to be launched with working directory Game-Data)
+Build/Robot-Character/ched - skeleton animation editor
+Build/Robot-Editor/editor - level editor
+Build/Robot-Game/robot - game ('a' 'd' to move, space for jumping, 'e' to interact and 's' to strike)
+
+
+
+
+
+
+
+

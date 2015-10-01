@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<chedSettings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:noNamespaceSchemaLocation="http://localhost/schema/ched_settings.xsd" >
+
+	<timeline hw="0.65"
+			  hh="0.045"
+			  background="menu"
+			  elementsCount="31"
+			  numPerElement="5"
+			  xPadding="0.02"
+			  yPadding="0.01"
+			  linesHexColor="FFFFFF" 
+			  labelHexColor="FFFFFF" 
+			  animEndHexColor="FF0000"
+			  labelSize="14"
+			  currentTimeHexColor="00FF00"
+			  currentHW="0.01"
+			  frameHexColor="FFCC00"
+			  frameHW="0.0075"
+			  lineHeightPercent="0.5"
+			  midLineHeightPercent="0.25">
+		<pos x="-0.05" y="-0.40" />
+	</timeline>
+</chedSettings>

@@ -1,0 +1,80 @@
+
+ --------- Music & Sound API
+
+music_create <name> -> id
+music_play   <id>
+sound_create <name> -> id
+sound_play   <id>
+sound_stopAll
+
+ --------- Таймеры и отложенные комманды
+
+
+clock_schedule {func, command, startOffset, infinite, interval, repeats} // Запланировать выполнение функции и/или комманды
+clock_postPhysStep({command,func}) // Команда или/и функция выполняются после рассчета физики
+clock_scale <float(scale)> // меняет скорость течения времени в игре
+clock_smoothScale <float(targetScale)> <long(duration|ms)> <string(type|"in","out","inout")> <pow> // плавно меняет скорость течения в игре
+clock_pause <bool(paused)>
+
+ --------- GameState
+
+game_loadState <name>
+
+ --------- Input
+
+input_block                <bool>
+input_addClickUp           <func>
+input_addMouseMove         <func>
+input_addKeyPressed        <func>
+input_addSpecKeyPressed    <func>
+input_removeClickDown      <func>
+input_removeClickUp        <func>
+input_removeMouseMove      <func>
+input_removeKeyPressed     <func>
+input_removeSpecKeyPressed <func>
+
+ ---------- Character
+
+char_addAnimationListener    <funcName>
+char_removeAnimationListener <funcName>
+char_addAnimation            <anim> <bool(cycled)>
+char_removeAnimation         <anim>
+char_slotImg                 <slot> <img>
+char_hit                     <dmgValue>
+
+ai_findByName   <name>    -> <charUid>
+ai_getPosition  <objectUid> -> x,y
+ai_move         <charUid> <bool(forward)>
+ai_attack       <charUid> <isOn> <slotNum>
+ai_stop         <charUid>
+ai_getHealth    <charUid> -> <health>
+ai_getMaxHealth <charUid> -> <maxHealth>
+ai_getProtagonistUid -> <protagonistUid>
+ai_setWeapon    <charUid> <slotNum> <weaponName>
+
+
+ai_spawn        <name> <x> <y> -> <charUid> // Создать врага. Срабатывает только после расчета всей физики
+ai_onDestroyed  <objectUid> <funcName> // Вешает событие на уничтоженеи объекта
+
+effect_play <effectName> <vec4(parms)> <rgba(color)> <zOrder=0> <vec2(dir)=(0,0)>
+
+--------- Effects
+
+--------- Level Objects
+
+
+light_dayTime    <value>
+
+object_color           <name> <r> <g> <b> <a>
+object_setVelocity     <name> <x> <y>
+object_enable          <name> <isEnabled>
+object_delete          <name>
+object_break           <name> - works with boxes that are consisted from several fixtures
+object_makeInteractive <name> <scipt> <w> <h>
+
+ ---------- Camera
+ camera_lock        <objectUid> <x> <y>
+ camera_move        <x> <y> <z>
+ camera_velocity    <x> <y> <z>
+ camera_setPosition <x> <y> <z>
+ camera_easePow     <int(easePow)>

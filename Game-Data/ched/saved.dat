@@ -1,0 +1,31 @@
+<savedData>
+	<timeLine>
+	<startX>0</startX>
+	<endX>40</endX>
+	<divStep>1</divStep>
+	<markFreq>5</markFreq>
+	</timeLine>
+	<properties animation="attack" workTarget="animation"/>
+	<draw>
+		<bonesState drawable="1" selectable="1"/>
+		<picsState drawable="1" selectable="1"/>
+		<physState drawable="1" selectable="1"/>
+	</draw>
+	<camera x="0.5" y="0.05" z="1"/>
+	<windows name="properties" minimalized="0" visible="1">
+		<pos x="0.8" y="-0.00854109"/>
+	</windows>
+	<windows name="draw" minimalized="0" visible="1">
+		<pos x="-0.804615" y="0.118439"/>
+	</windows>
+	<windows name="events" minimalized="0" visible="1">
+		<pos x="0.793846" y="0.637489"/>
+	</windows>
+	<windows name="targets" minimalized="0" visible="1">
+		<pos x="-0.810769" y="0.683715"/>
+	</windows>
+	<windows name="AnimationControl" minimalized="0" visible="1">
+		<pos x="-0.112308" y="-0.496904"/>
+	</windows>
+</savedData>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="resources" type="ResourceDescriptionList"/>
+
+    <xs:complexType name="ResourceDescriptionList">
+        <xs:sequence>
+            <xs:element name="font" type="LinkType" maxOccurs="unbounded"/>
+            <xs:element name="texture" type="LinkType" maxOccurs="unbounded"/>
+            <xs:element name="sprite" type="SpriteLinkType" maxOccurs="unbounded"/>
+            <xs:element name="resource" type="LinkType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LinkType">
+        <xs:attribute name="name" />
+        <xs:attribute name="file" />
+    </xs:complexType>
+
+    <xs:complexType name="SpriteLinkType">
+        <xs:attribute name="name" />
+        <xs:attribute name="file" />
+        <xs:attribute name="w" type="xs:float" default="-1" />
+        <xs:attribute name="h" type="xs:float" default="-1" />
+        <xs:attribute name="top" type="xs:float" default="-1" />
+        <xs:attribute name="left" type="xs:float" default="-1" />
+        <xs:attribute name="right" type="xs:float" default="-1" />
+        <xs:attribute name="bottom" type="xs:float" default="-1" />
+    </xs:complexType>
+
+</xs:schema>

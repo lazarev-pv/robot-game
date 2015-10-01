@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<resources>
+    <sprite file="light.png" name="light" />
+    <sprite file="light_dir.png" name="light_dir" />
+    <texture file="fire.png" name="fire" />
+    <texture file="rain.png" name="rain" />
+    <texture file="smoke.png" name="explosion" />
+</resources>
+

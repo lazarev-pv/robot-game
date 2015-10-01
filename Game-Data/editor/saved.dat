@@ -1,0 +1,18 @@
+<saveData>
+	<selectFilter>
+	<entityName>pres2d</entityName>
+	<entityName>pres3d</entityName>
+	<entityName>geomChain</entityName>
+	<entityName>geomObject</entityName>
+	<entityName>geomJoint</entityName>
+	<entityName>spotLight</entityName>
+	<entityName>dirLight</entityName>
+	<entityName>fxObject</entityName>
+	<entityName>event</entityName>
+	<entityName>enemy</entityName>
+	<entityName>point</entityName>
+	<entityName>all</entityName>
+	</selectFilter>
+	<cameraPos x="2.24429" y="1.62057" z="3.62974"/>
+</saveData>
+

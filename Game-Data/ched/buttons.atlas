@@ -1,0 +1,64 @@
+<texture file="buttons.png">
+    <sprite name="play.normal">
+        <frame x1="0" y1="0" x2="31" y2="31" />
+    </sprite>
+    <sprite name="play.hovered">
+        <frame x1="0" y1="32" x2="31" y2="63" />
+    </sprite>
+    <sprite name="play.pushed">
+        <frame x1="0" y1="64" x2="31" y2="95" />
+    </sprite>
+
+    <sprite name="stop.normal">
+        <frame x1="32" y1="0" x2="63" y2="31" />
+    </sprite>
+    <sprite name="stop.hovered">
+        <frame x1="32" y1="32" x2="63" y2="63" />
+    </sprite>
+    <sprite name="stop.pushed">
+        <frame x1="32" y1="64" x2="63" y2="95" />
+    </sprite>
+
+    <sprite name="repeat.normal">
+        <frame x1="64" y1="0" x2="95" y2="31" />
+    </sprite>
+    <sprite name="repeat.hovered">
+        <frame x1="64" y1="32" x2="95" y2="63" />
+    </sprite>
+    <sprite name="repeat.pushed">
+        <frame x1="64" y1="64" x2="95" y2="95" />
+    </sprite>
+
+    <sprite name="back.normal">
+        <frame x1="96" y1="0" x2="127" y2="31" />
+    </sprite>
+    <sprite name="back.hovered">
+        <frame x1="96" y1="32" x2="127" y2="63" />
+    </sprite>
+    <sprite name="back.pushed">
+        <frame x1="96" y1="64" x2="127" y2="95" />
+    </sprite>
+
+    <sprite name="forward.normal">
+        <frame x1="128" y1="0" x2="159" y2="31" />
+    </sprite>
+    <sprite name="forward.hovered">
+        <frame x1="128" y1="32" x2="159" y2="63" />
+    </sprite>
+    <sprite name="forward.pushed">
+        <frame x1="128" y1="64" x2="159" y2="95" />
+    </sprite>
+
+    <sprite name="icon.rotate">
+        <frame x1="0" y1="96" x2="31" y2="127" />
+    </sprite>
+    <sprite name="icon.move">
+        <frame x1="32" y1="96" x2="63" y2="127" />
+    </sprite>
+    <sprite name="icon.scale">
+        <frame x1="64" y1="96" x2="95" y2="127" />
+    </sprite>
+    <sprite name="icon.bone">
+        <frame x1="96" y1="96" x2="127" y2="127" />
+    </sprite>
+</texture>

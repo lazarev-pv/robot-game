@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:include schemaLocation="common.xsd"/>
+    <xs:include schemaLocation="resources_description.xsd"/>
+
+    <xs:element name="character">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resources" type="ResourceDescriptionList"/>
+                <xs:element name="skeleton" type="SkeletonType"/>
+                <xs:element name="physics" type="CharPhysType"/>
+                <xs:element name="animations" type="AnimationListType"/>
+            </xs:sequence>
+            <xs:attribute name="ai" default="ai.lua"/>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="CharPhysType">
+        <xs:sequence>
+            <xs:element name="box" type="CharBoxType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CharBoxType">
+        <xs:attribute name="pox_x" type="xs:float"/>
+        <xs:attribute name="pox_y" type="xs:float"/>
+        <xs:attribute name="hw" type="xs:float"/>
+        <xs:attribute name="hh" type="xs:float"/>
+        <xs:attribute name="friction" type="xs:float" default="0.0"/>
+        <xs:attribute name="density" type="xs:float" default="0.0"/>
+        <xs:attribute name="sensor" type="xs:boolean" default="false"/>
+        <xs:attribute name="rotation" type="xs:float" default="0.0"/>
+        <xs:attribute name="name"/>
+        <xs:attribute name="parent"/>
+    </xs:complexType>
+
+    <xs:complexType name="AnimationListType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="animation" type="SkeletonAnimationType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="SkeletonAnimationType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="event" type="AnimationEventType" />
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="bone" type="SkeletonAnimationBoneType"/>
+        </xs:sequence>
+        <xs:attribute name="name"/>
+        <xs:attribute default="0.0" name="duration" type="xs:float"/>
+    </xs:complexType>
+
+    <xs:complexType name="MoveTransitionType">
+        <xs:attribute name="time" type="xs:float"/>
+        <xs:attribute name="offset_x" type="xs:float"/>
+        <xs:attribute name="offset_y" type="xs:float"/>
+    </xs:complexType>
+
+   <xs:complexType name="RotateTransitionType">
+        <xs:attribute name="time" type="xs:float"/>
+        <xs:attribute name="q_z" type="xs:float"/>
+        <xs:attribute name="q_w" type="xs:float"/>
+    </xs:complexType>
+
+    <xs:complexType name="ScaleTransitionType">
+        <xs:attribute name="time" type="xs:float"/>
+        <xs:attribute name="scale_x" type="xs:float"/>
+        <xs:attribute name="scale_y" type="xs:float"/>
+    </xs:complexType>
+
+    <xs:complexType name="SkeletonAnimationBoneType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="offset" type="MoveTransitionType"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="rotate" type="RotateTransitionType"/>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="scale" type="ScaleTransitionType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int"/>
+    </xs:complexType>
+
+    <xs:complexType name="AnimationEventType">
+        <xs:attribute name="name" />
+        <xs:attribute name="time" type="xs:float" />
+    </xs:complexType>
+
+    <xs:complexType name="SkeletonType">
+        <xs:sequence>
+            <xs:element maxOccurs="unbounded" minOccurs="0" name="bones" type="BoneType"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="BodyPartType">
+        <xs:sequence>
+            <xs:element name="pos" type="Point2D"/>
+            <xs:element name="scale" type="Point2D"/>
+        </xs:sequence>
+        <xs:attribute name="rotation" type="xs:float"/>
+        <xs:attribute name="pres"/>
+        <xs:attribute name="name" />
+    </xs:complexType>
+
+    <xs:complexType name="BoneSlotType">
+        <xs:sequence>
+            <xs:element name="pres" type="BodyPartType" maxOccurs="unbounded" />
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:int" />
+        <xs:attribute name="name" />
+        <xs:attribute name="defaultPres" />
+        <xs:attribute name="zOrder" type="xs:int" />
+    </xs:complexType>
+
+    <xs:complexType name="BoneType">
+        <xs:sequence>
+            <xs:element name="begin" type="Point2D"/>
+            <xs:element name="end" type="Point2D"/>
+            <xs:element name="slot" type="BoneSlotType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="color" type="ColorType" />
+        </xs:sequence>
+        <xs:attribute name="name"/>
+        <xs:attribute name="parent"/>
+        <xs:attribute name="id" type="xs:int"/>
+    </xs:complexType>
+</xs:schema>

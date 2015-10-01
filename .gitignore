@@ -1,0 +1,14 @@
+*~
+.metadata
+RemoteSystemsTempFiles
+/**/Build
+
+**/.classpath
+**/.project
+**/.cproject
+**/.settings
+**/.~lock.*
+**/.idea
+
+appcompat_v7
+.idea

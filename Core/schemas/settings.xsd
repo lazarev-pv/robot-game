@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="settings">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="screen" type="ScreenType"/>
+                <xs:element name="physics" type="PhysicsType"/>
+                <xs:element name="camera" type="CameraType"/>
+                <xs:element name="gameStates" type="GameStatesType"/>
+                <xs:element name="inputConfig" type="InputConfigType"/>
+                <xs:element name="properties" type="PropertiesList" minOccurs="0"/>
+                <xs:element name="resources" type="ResourcesListType"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="ResourcesListType">
+        <xs:sequence>
+            <xs:element name="description" maxOccurs="unbounded" >
+                <xs:complexType>
+                    <xs:attribute name="file" />
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="GameStatesType">
+        <xs:sequence>
+            <xs:element name="state" type="GameStateType" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="initial" use="required"/>
+        <xs:attribute name="userInterface"/>
+        <xs:attribute name="dataRootDir"/>
+    </xs:complexType>
+
+    <xs:complexType name="GameStateType">
+        <xs:attribute name="name" use="required"/>
+        <xs:attribute name="levelDescription"/>
+    </xs:complexType>
+
+    <xs:complexType name="ScreenType">
+        <xs:attribute name="icon" use="required"/>
+        <xs:attribute name="title" use="required"/>
+        <xs:attribute name="x" type="xs:int" use="required"/>
+        <xs:attribute name="y" type="xs:int" use="required"/>
+        <xs:attribute name="width" type="xs:int" use="required"/>
+        <xs:attribute name="height" type="xs:int" use="required"/>
+        <xs:attribute name="depthTest" type="xs:boolean" default="false" />
+        <xs:attribute name="blending" type="xs:boolean" default="true" />
+
+        <xs:attribute name="shaders"/>
+    </xs:complexType>
+
+    <xs:complexType name="Vector2D">
+        <xs:attribute name="x" type="xs:float" use="required"/>
+        <xs:attribute name="y" type="xs:float" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="PhysicsType">
+        <xs:sequence>
+            <xs:element name="gravity" type="Vector2D"/>
+        </xs:sequence>
+        <xs:attribute name="timeMultiply" type="xs:float" use="required"/>
+        <xs:attribute name="velocityIterations" type="xs:int" use="required"/>
+        <xs:attribute name="positionIterations" type="xs:int" use="required"/>
+        <xs:attribute name="calcTimeInterval" type="xs:int" default="20"/>
+        <xs:attribute name="physicsStepDimension" type="xs:float" default="0.001"/>
+    </xs:complexType>
+
+    <xs:complexType name="CameraType">
+        <xs:attribute name="near" type="xs:float" use="required"/>
+        <xs:attribute name="far" type="xs:float" use="required"/>
+        <xs:attribute name="x" type="xs:float" use="required"/>
+        <xs:attribute name="y" type="xs:float" use="required"/>
+        <xs:attribute name="z" type="xs:float" use="required"/>
+        <xs:attribute name="fov" type="xs:float" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="SavedDataType">
+        <xs:attribute name="path" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="InputConfigType">
+        <xs:sequence>
+            <xs:element name="profile" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="key" type="KeyType" minOccurs="0" maxOccurs="unbounded"/>
+                        <xs:element name="mouse" type="MouseInputType" minOccurs="0" maxOccurs="unbounded"/>
+                    </xs:sequence>
+                    <xs:attribute name="name"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:attribute name="activeProfile"/>
+    </xs:complexType>
+
+    <xs:complexType name="KeyType">
+        <xs:attribute name="code" type="xs:int"/>
+        <xs:attribute name="event"/>
+    </xs:complexType>
+
+    <xs:complexType name="MouseInputType">
+        <xs:choice>
+            <xs:element name="move"/>
+            <xs:element name="clicked">
+                <xs:complexType>
+                    <xs:attribute name="code" type="xs:int"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:choice>
+        <xs:attribute name="event"/>
+    </xs:complexType>
+
+    <xs:complexType name="PropertiesList">
+        <xs:sequence>
+            <xs:element name="property" maxOccurs="unbounded" minOccurs="0">
+                <xs:complexType>
+                    <xs:attribute name="name"/>
+                    <xs:attribute name="value"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

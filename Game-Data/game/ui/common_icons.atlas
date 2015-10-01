@@ -1,0 +1,23 @@
+<texture file="common_icons.png">
+
+    <sprite name="ui.collapse.normal">
+        <frame x1="0" y1="0" x2="31" y2="31" />
+    </sprite>
+    <sprite name="ui.collapse.hovered">
+        <frame x1="0" y1="32" x2="31" y2="63" />
+    </sprite>
+    <sprite name="ui.collapse.pushed">
+        <frame x1="0" y1="64" x2="31" y2="95" />
+    </sprite>
+
+    <sprite name="ui.close.normal">
+        <frame x1="32" y1="0" x2="63" y2="31" />
+    </sprite>
+    <sprite name="ui.close.hovered">
+        <frame x1="32" y1="32" x2="63" y2="63" />
+    </sprite>
+    <sprite name="ui.close.pushed">
+        <frame x1="32" y1="64" x2="63" y2="95" />
+    </sprite>
+
+</texture>

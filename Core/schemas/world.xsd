@@ -1,0 +1,234 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:include schemaLocation="common.xsd"/>
+    <xs:include schemaLocation="resources_description.xsd"/>
+
+    <xs:element name="world">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="resources" type="ResourceDescriptionList"/>
+                <xs:element name="levelSettings" type="LevelSettings"/>
+                <xs:element name="camera" type="RobotCameraSettings"/>
+                <xs:element name="points" type="NamedPoint2D" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="layer" type="WorldLayers" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="enemies" type="EnemyList" minOccurs="0"/>
+                <xs:element name="weather" type="WeatherType" minOccurs="0"/>
+                <xs:element name="event" type="EventType" minOccurs="0" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="EventType">
+        <xs:sequence>
+            <xs:element name="pos" type="Point2D"/>
+            <xs:element name="size" type="Point2D"/>
+        </xs:sequence>
+        <xs:attribute name="name" />
+        <xs:attribute name="onEnter" />
+        <xs:attribute name="onLeave" />
+        <xs:attribute name="infinite" type="xs:boolean" default="false" />
+    </xs:complexType>
+
+    <xs:complexType name="LevelSettings">
+        <xs:attribute name="scriptName"/>
+        <xs:attribute name="startEvent"/>
+    </xs:complexType>
+
+    <xs:complexType name="WorldLayers">
+        <xs:sequence>
+            <xs:element name="art" type="ArtType" minOccurs="0" maxOccurs="unbounded" />
+            <xs:element name="objs3d" type="Obj3DType" minOccurs ="0"/>
+            <xs:element name="geometry" type="GeometryList" minOccurs="0"/>
+            <xs:element name="fxes" type="FXListType" minOccurs="0"/>
+            <xs:element name="light" type="LightListType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="z" type="xs:float"/>
+        <xs:attribute name="name"/>
+    </xs:complexType>
+
+    <xs:complexType name="RobotCameraSettings">
+        <xs:sequence>
+            <xs:element name="initPos" type="Point3D"/>
+            <xs:element name="constraints" type="RobotCameraConstraints"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="RobotCameraConstraints">
+        <xs:attribute name="left" type="xs:float" use="required"/>
+        <xs:attribute name="right" type="xs:float" use="required"/>
+        <xs:attribute name="top" type="xs:float" use="required"/>
+        <xs:attribute name="bottom" type="xs:float" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="NamedPoint2D">
+        <xs:attribute name="x" type="xs:float" use="required"/>
+        <xs:attribute name="y" type="xs:float" use="required"/>
+        <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="Reference">
+        <xs:attribute name="name" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="WeatherType">
+        <xs:sequence>
+            <xs:element name="dayLight" type="Point3D"/>
+            <xs:element name="nightLight" type="Point3D"/>
+        </xs:sequence>
+        <xs:attribute name="daytime" type="xs:float"/>
+        <xs:attribute name="thunder" type="xs:boolean" default="false"/>
+    </xs:complexType>
+    <xs:complexType name="FXType">
+        <xs:sequence>
+            <xs:element name="dir" type="Point2D"/>
+            <xs:element name="color" type="ColorType"/>
+        </xs:sequence>
+        <xs:attribute name="name"/>
+        <xs:attribute name="effect"/>
+        <xs:attribute name="hw" type="xs:float"/>
+        <xs:attribute name="hh" type="xs:float"/>
+        <xs:attribute name="x" type="xs:float"/>
+        <xs:attribute name="y" type="xs:float"/>
+        <xs:attribute name="zOrder" type="xs:int"/>
+    </xs:complexType>
+
+    <xs:complexType name="LightType">
+        <xs:choice>
+            <xs:element name="spot" type="SpotLightType"/>
+            <xs:element name="directional" type="DirLightType"/>
+        </xs:choice>
+        <xs:attribute name="name"/>
+        <xs:attribute name="r" type="xs:float"/>
+        <xs:attribute name="g" type="xs:float"/>
+        <xs:attribute name="b" type="xs:float"/>
+        <xs:attribute name="a" type="xs:float"/>
+        <xs:attribute name="enable" type="xs:boolean" default="true"/>
+    </xs:complexType>
+
+    <xs:complexType name="SpotLightType">
+        <xs:sequence>
+            <xs:element name="pos" type="Point3D"/>
+        </xs:sequence>
+        <xs:attribute name="i" type="xs:float"/>
+        <xs:attribute name="hw" type="xs:float"/>
+        <xs:attribute name="hh" type="xs:float"/>
+    </xs:complexType>
+
+    <xs:complexType name="DirLightType">
+        <xs:sequence>
+            <xs:element name="lt" type="Point3D"/>
+            <xs:element name="rt" type="Point3D"/>
+            <xs:element name="lb" type="Point3D"/>
+            <xs:element name="rb" type="Point3D"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="FXListType">
+        <xs:sequence>
+            <xs:element name="fx" type="FXType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="LightListType">
+        <xs:sequence>
+            <xs:element name="light" type="LightType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ArtType">
+        <xs:sequence>
+            <xs:element name="image" type="Reference"/>
+            <xs:element name="scale" type="Point2D"/>
+            <xs:element name="repeat" type="Point2D"/>
+            <xs:element name="pos" type="Point3D"/>
+            <xs:element name="color" type="ColorType" />
+        </xs:sequence>
+        <xs:attribute name="zOrder" type="xs:int" use="required"/>
+        <xs:attribute name="rotation" type="xs:float" default="0.0"/>
+        <xs:attribute name="name"/>
+    </xs:complexType>
+
+    <xs:complexType name="Obj3DType">
+        <xs:sequence>
+            <xs:element name="box3D" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="pos" type="Point3D"/>
+                        <xs:element name="size" type="Point3D"/>
+                        <xs:element name="tex" type="Point2D"/>
+                        <xs:element name="color" type="ColorType" />
+                    </xs:sequence>
+                    <xs:attribute name="texture"/>
+                    <xs:attribute name="name"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="GeometryList">
+        <xs:sequence>
+            <xs:element name="slot" type="GeometrySlot" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="join" type="JointType" maxOccurs="unbounded" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="JointType">
+        <xs:sequence>
+            <xs:element name="offset1" type="Point3D" />
+            <xs:element name="offset2" type="Point3D" />
+        </xs:sequence>
+        <xs:attribute name="name" />
+        <xs:attribute name="obj1Name" />
+        <xs:attribute name="obj2Name" />
+        <xs:attribute name="frequence" type="xs:float"/>
+        <xs:attribute name="damp" type="xs:float" />
+    </xs:complexType>
+
+    <xs:complexType name="GeometrySlot">
+        <xs:sequence>
+            <xs:element name="box" type="ERBoxType" maxOccurs="unbounded" />
+            <xs:element name="chain" type="ERChainType"/>
+        </xs:sequence>
+        <xs:attribute name="name"/>
+        <!-- 0 - static, 1 - kinematic, 2 - dynamic -->
+        <xs:attribute name="physType" type="xs:int" default="2" />
+        <xs:attribute name="x" type="xs:float" use="required" default="0"/>
+        <xs:attribute name="y" type="xs:float" use="required" default="0"/>
+    </xs:complexType>
+
+    <xs:complexType name="ERBoxType">
+        <xs:sequence>
+            <xs:element name="art" type="ArtType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="x" type="xs:float" use="required" default="0" />
+        <xs:attribute name="y" type="xs:float" use="required" default="0" />
+        <xs:attribute name="hw" type="xs:float" use="required"/>
+        <xs:attribute name="hh" type="xs:float" use="required"/>
+        <xs:attribute name="friction" type="xs:float" default="1.0"/>
+        <xs:attribute name="density" type="xs:float" default="1.0"/>
+        <xs:attribute name="sensor" type="xs:boolean" default="false" />
+        <xs:attribute name="category"/>
+    </xs:complexType>
+
+    <xs:complexType name="ERChainType">
+        <xs:sequence>
+            <xs:element name="point" type="Point2D" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="friction" type="xs:float" default="1.0"/>
+        <xs:attribute name="category"/>
+    </xs:complexType>
+
+    <xs:complexType name="EnemyList">
+        <xs:sequence>
+            <xs:element name="enemy" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="pos" type="Point2D"/>
+                    </xs:sequence>
+                    <xs:attribute name="name"/>
+                    <xs:attribute name="enemyClass"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>

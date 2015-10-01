@@ -1,0 +1,13 @@
+<texture file="ui.png">
+    <sprite name="buttons" initialAnimation="normal" w="64" h="32" top="15" left="15" right="15" bottom="15">
+        <animation name="pushed">
+            <frame x1="0" y1="0" x2="63" y2="31" />
+        </animation>
+        <animation name="normal">
+            <frame x1="0" y1="33" x2="63" y2="64" />
+        </animation>
+        <animation name="hovered">
+            <frame x1="0" y1="66" x2="63" y2="97" />
+        </animation>
+    </sprite>
+</texture>

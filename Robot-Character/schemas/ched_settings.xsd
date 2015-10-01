@@ -1,0 +1,38 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" >
+
+    <xs:include schemaLocation="../../Core/schemas/common.xsd"/>
+
+	<xs:element name="chedSettings">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="timeline" type="ChedTimeLine" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="ChedTimeLine">
+		<xs:sequence>
+			<xs:element name="pos" type="Point2D"/>
+		</xs:sequence>
+		<xs:attribute name="hw" type="xs:float" />
+		<xs:attribute name="hh" type="xs:float" />
+		<xs:attribute name="xPadding" type="xs:float" />
+		<xs:attribute name="yPadding" type="xs:float" />
+		<xs:attribute name="elementsCount" type="xs:int" />
+		<xs:attribute name="numPerElement" type="xs:int" />
+		<xs:attribute name="labelSize" type="xs:int" />
+		<xs:attribute name="labelYOffset" type="xs:float" />
+		<xs:attribute name="background" />
+		<xs:attribute name="linesHexColor" />
+		<xs:attribute name="labelHexColor" />
+		<xs:attribute name="frameHexColor" />
+		<xs:attribute name="animEndHexColor" />
+		<xs:attribute name="frameHW" type="xs:float" />
+		<xs:attribute name="currentTimeHexColor" />
+		<xs:attribute name="currentHW" type="xs:float" />
+		<xs:attribute name="lineHeightPercent" type="xs:float" />
+		<xs:attribute name="midLineHeightPercent" type="xs:float" />
+		
+	</xs:complexType>
+	
+</xs:schema>
